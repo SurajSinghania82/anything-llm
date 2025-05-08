@@ -129,11 +129,11 @@ const TRANSLATIONS = {
   },
   welcomeMessage: {
     part1:
-      "Willkommen bei AnythingLLM, AnythingLLM ist ein Open-Source-KI-Tool von Mintplex Labs, das alles in einen trainierten Chatbot verwandelt, den Sie abfragen und mit dem Sie chatten können. AnythingLLM ist eine BYOK-Software (Bring-Your-Own-Keys), daher gibt es keine Abonnements, Gebühren oder Kosten für diese Software außerhalb der Dienste, die Sie damit nutzen möchten.",
+      "Willkommen bei AthenaLLM, AthenaLLM ist ein Open-Source-KI-Tool von Mintplex Labs, das alles in einen trainierten Chatbot verwandelt, den Sie abfragen und mit dem Sie chatten können. AthenaLLM ist eine BYOK-Software (Bring-Your-Own-Keys), daher gibt es keine Abonnements, Gebühren oder Kosten für diese Software außerhalb der Dienste, die Sie damit nutzen möchten.",
     part2:
-      "AnythingLLM ist der einfachste Weg, leistungsstarke KI-Produkte wie OpenAI, GPT-4, LangChain, PineconeDB, ChromaDB und andere Dienste in einem übersichtlichen Paket ohne Aufwand zusammenzufassen, um Ihre Produktivität um das 100-fache zu steigern.",
+      "AthenaLLM ist der einfachste Weg, leistungsstarke KI-Produkte wie OpenAI, GPT-4, LangChain, PineconeDB, ChromaDB und andere Dienste in einem übersichtlichen Paket ohne Aufwand zusammenzufassen, um Ihre Produktivität um das 100-fache zu steigern.",
     part3:
-      "AnythingLLM kann vollständig lokal auf Ihrem Computer mit geringem Overhead laufen - Sie werden nicht einmal bemerken, dass es da ist! Keine GPU erforderlich. Cloud- und On-Premises-Installation ist ebenfalls verfügbar.\nDas KI-Tool-Ökosystem wird jeden Tag leistungsfähiger. AnythingLLM macht es einfach, es zu nutzen.",
+      "AthenaLLM kann vollständig lokal auf Ihrem Computer mit geringem Overhead laufen - Sie werden nicht einmal bemerken, dass es da ist! Keine GPU erforderlich. Cloud- und On-Premises-Installation ist ebenfalls verfügbar.\nDas KI-Tool-Ökosystem wird jeden Tag leistungsfähiger. AthenaLLM macht es einfach, es zu nutzen.",
     githubIssue: "Erstellen Sie ein Problem auf GitHub",
     user1: "Wie fange ich an?!",
     part4:
@@ -142,7 +142,7 @@ const TRANSLATIONS = {
     user2:
       "Ist das so eine Art KI-Dropbox oder so? Was ist mit dem Chatten? Es ist doch ein Chatbot, oder?",
     part5:
-      "AnythingLLM ist mehr als eine intelligentere Dropbox.\n\nAnythingLLM bietet zwei Möglichkeiten, mit Ihren Daten zu sprechen:\n\n<i>Abfrage:</i> Ihre Chats geben Daten oder Schlussfolgerungen zurück, die in den Dokumenten Ihres Workspaces gefunden wurden, auf die es Zugriff hat. Je mehr Dokumente Sie dem Workspace hinzufügen, desto intelligenter wird er! \n\n<i>Konversation:</i> Ihre Dokumente + Ihr laufender Chat-Verlauf tragen gleichzeitig zum LLM-Wissen bei. Großartig für das Anhängen von Echtzeit-Textinformationen oder Korrekturen und Missverständnissen, die das LLM haben könnte. \n\nSie können zwischen beiden Modi wechseln \n<i>mitten im Chatten!</i>",
+      "AthenaLLM ist mehr als eine intelligentere Dropbox.\n\nAthenaLLM bietet zwei Möglichkeiten, mit Ihren Daten zu sprechen:\n\n<i>Abfrage:</i> Ihre Chats geben Daten oder Schlussfolgerungen zurück, die in den Dokumenten Ihres Arbeitsbereichs gefunden wurden, auf die es Zugriff hat. Je mehr Dokumente Sie dem Arbeitsbereich hinzufügen, desto intelligenter wird er! \n\n<i>Konversation:</i> Ihre Dokumente + Ihr laufender Chat-Verlauf tragen gleichzeitig zum LLM-Wissen bei. Großartig für das Anhängen von Echtzeit-Textinformationen oder Korrekturen und Missverständnissen, die das LLM haben könnte. \n\nSie können zwischen beiden Modi wechseln \n<i>mitten im Chatten!</i>",
     user3: "Wow, das klingt erstaunlich, lass es mich gleich ausprobieren!",
     part6: "Viel Spaß!",
     starOnGitHub: "Stern auf GitHub",
@@ -260,7 +260,7 @@ const TRANSLATIONS = {
       add: "Neue Nachricht hinzufügen",
       save: "Nachrichten speichern",
       heading: "Erkläre mir",
-      body: "die Vorteile von AnythingLLM",
+      body: "die Vorteile von AthenaLLM",
     },
     pfp: {
       title: "Assistent-Profilbild",
@@ -551,7 +551,7 @@ const TRANSLATIONS = {
   api: {
     title: "API-Schlüssel",
     description:
-      "API-Schlüssel ermöglichen es dem Besitzer, programmatisch auf diese AnythingLLM-Instanz zuzugreifen und sie zu verwalten.",
+      "API-Schlüssel ermöglichen es dem Besitzer, programmatisch auf diese AthenaLLM-Instanz zuzugreifen und sie zu verwalten.",
     link: "Lesen Sie die API-Dokumentation",
     generate: "Neuen API-Schlüssel generieren",
     table: {
@@ -563,7 +563,7 @@ const TRANSLATIONS = {
   llm: {
     title: "LLM-Präferenz",
     description:
-      "Dies sind die Anmeldeinformationen und Einstellungen für Ihren bevorzugten LLM-Chat- und Einbettungsanbieter. Es ist wichtig, dass diese Schlüssel aktuell und korrekt sind, sonst wird AnythingLLM nicht richtig funktionieren.",
+      "Dies sind die Anmeldeinformationen und Einstellungen für Ihren bevorzugten LLM-Chat- und Einbettungsanbieter. Es ist wichtig, dass diese Schlüssel aktuell und korrekt sind, sonst wird AthenaLLM nicht richtig funktionieren.",
     provider: "LLM-Anbieter",
     providers: {
       azure_openai: {
@@ -583,7 +583,7 @@ const TRANSLATIONS = {
       "Dies sind die Anmeldeinformationen und Einstellungen für Ihren bevorzugten Transkriptionsmodellanbieter. Es ist wichtig, dass diese Schlüssel aktuell und korrekt sind, sonst werden Mediendateien und Audio nicht transkribiert.",
     provider: "Transkriptionsanbieter",
     "warn-start":
-      "Die Verwendung des lokalen Whisper-Modells auf Maschinen mit begrenztem RAM oder CPU kann AnythingLLM bei der Verarbeitung von Mediendateien zum Stillstand bringen.",
+      "Die Verwendung des lokalen Whisper-Modells auf Maschinen mit begrenztem RAM oder CPU kann AthenaLLM bei der Verarbeitung von Mediendateien zum Stillstand bringen.",
     "warn-recommend":
       "Wir empfehlen mindestens 2 GB RAM und das Hochladen von Dateien <10 MB.",
     "warn-end":
@@ -594,9 +594,11 @@ const TRANSLATIONS = {
     "desc-start":
       "Bei der Verwendung eines LLM, das keine native Unterstützung für eine Einbettungs-Engine bietet, müssen Sie möglicherweise zusätzlich Anmeldeinformationen für die Texteinbettung angeben.",
     "desc-end":
-      "Einbettung ist der Prozess, Text in Vektoren umzuwandeln. Diese Anmeldeinformationen sind erforderlich, um Ihre Dateien und Prompts in ein Format umzuwandeln, das AnythingLLM zur Verarbeitung verwenden kann.",
+      "Einbettung ist der Prozess, Text in Vektoren umzuwandeln. Diese Anmeldeinformationen sind erforderlich, um Ihre Dateien und Prompts in ein Format umzuwandeln, das AthenaLLM zur Verarbeitung verwenden kann.",
     provider: {
       title: "Einbettungsanbieter",
+      description:
+        "Bei Verwendung der nativen Einbettungs-Engine von AthenaLLM ist keine Einrichtung erforderlich.",
     },
   },
   text: {
@@ -620,7 +622,7 @@ const TRANSLATIONS = {
   vector: {
     title: "Vektordatenbank",
     description:
-      "Dies sind die Anmeldeinformationen und Einstellungen für die Funktionsweise Ihrer AnythingLLM-Instanz. Es ist wichtig, dass diese Schlüssel aktuell und korrekt sind.",
+      "Dies sind die Anmeldeinformationen und Einstellungen für die Funktionsweise Ihrer AthenaLLM-Instanz. Es ist wichtig, dass diese Schlüssel aktuell und korrekt sind.",
     provider: {
       title: "Vektordatenbankanbieter",
       description: "Für LanceDB ist keine Konfiguration erforderlich.",
@@ -666,7 +668,7 @@ const TRANSLATIONS = {
     password: {
       title: "Passwortschutz",
       description:
-        "Schützen Sie Ihre AnythingLLM-Instanz mit einem Passwort. Wenn Sie dieses vergessen, gibt es keine Wiederherstellungsmethode, also stellen Sie sicher, dass Sie dieses Passwort speichern.",
+        "Schützen Sie Ihre AthenaLLM-Instanz mit einem Passwort. Wenn Sie dieses vergessen, gibt es keine Wiederherstellungsmethode, also stellen Sie sicher, dass Sie dieses Passwort speichern.",
     },
     instance: {
       title: "Instanz mit Passwort schützen",
@@ -689,7 +691,7 @@ const TRANSLATIONS = {
   privacy: {
     title: "Datenschutz & Datenverarbeitung",
     description:
-      "Dies ist Ihre Konfiguration dafür, wie verbundene Drittanbieter und AnythingLLM Ihre Daten behandeln.",
+      "Dies ist Ihre Konfiguration dafür, wie verbundene Drittanbieter und AthenaLLM Ihre Daten behandeln.",
     llm: "LLM-Auswahl",
     embedding: "Einbettungspräferenz",
     vector: "Vektordatenbank",
@@ -872,7 +874,7 @@ const TRANSLATIONS = {
       fetching: "Wird abgerufen...",
       "fetch-website": "Website abrufen",
       "privacy-notice":
-        "Diese Dateien werden zum Dokumentenprozessor hochgeladen, der auf dieser AnythingLLM-Instanz läuft. Diese Dateien werden nicht an Dritte gesendet oder geteilt.",
+        "Diese Dateien werden zum Dokumentenprozessor hochgeladen, der auf dieser AthenaLLM-Instanz läuft. Diese Dateien werden nicht an Dritte gesendet oder geteilt.",
     },
     pinning: {
       what_pinning: "Was bedeutet es Dokumente anzuheften?",
@@ -1045,6 +1047,145 @@ const TRANSLATIONS = {
           button: null,
         },
       },
+      "support-email": {
+        title: null,
+        description: null,
+      },
+      "app-name": {
+        title: null,
+        description: null,
+      },
+      "chat-message-alignment": {
+        title: null,
+        description: null,
+      },
+      "display-language": {
+        title: null,
+        description: null,
+      },
+      logo: {
+        title: null,
+        description: null,
+        add: null,
+        recommended: null,
+        remove: null,
+        replace: null,
+      },
+      "welcome-messages": {
+        title: null,
+        description: null,
+        new: null,
+        system: null,
+        user: null,
+        message: null,
+        assistant: null,
+        "double-click": null,
+        save: null,
+      },
+      "browser-appearance": {
+        title: null,
+        description: null,
+        tab: {
+          title: null,
+          description: null,
+        },
+        favicon: {
+          title: null,
+          description: null,
+        },
+      },
+      "sidebar-footer": {
+        title: null,
+        description: null,
+        icon: null,
+        link: null,
+      },
+    },
+  },
+  "main-page": {
+    noWorkspaceError:
+      "Bitte erstellen Sie einen Arbeitsbereich, bevor Sie einen Chat beginnen.",
+    checklist: {
+      title: "Erste Schritte",
+      tasksLeft: "Aufgaben übrig",
+      completed: "Sie sind auf dem Weg, ein AthenaLLM-Experte zu werden!",
+      dismiss: "schließen",
+      tasks: {
+        create_workspace: {
+          title: "Einen Arbeitsbereich erstellen",
+          description:
+            "Erstellen Sie Ihren ersten Arbeitsbereich, um zu beginnen",
+          action: "Erstellen",
+        },
+        send_chat: {
+          title: "Einen Chat senden",
+          description: "Starten Sie ein Gespräch mit Ihrem KI-Assistenten",
+          action: "Chat",
+        },
+        embed_document: {
+          title: "Ein Dokument einbetten",
+          description:
+            "Fügen Sie Ihr erstes Dokument zu Ihrem Arbeitsbereich hinzu",
+          action: "Einbetten",
+        },
+        setup_system_prompt: {
+          title: "Ein System-Prompt einrichten",
+          description: "Konfigurieren Sie das Verhalten Ihres KI-Assistenten",
+          action: "Einrichten",
+        },
+        define_slash_command: {
+          title: "Einen Slash-Befehl definieren",
+          description:
+            "Erstellen Sie benutzerdefinierte Befehle für Ihren Assistenten",
+          action: "Definieren",
+        },
+        visit_community: {
+          title: "Community Hub besuchen",
+          description: "Entdecken Sie Community-Ressourcen und Vorlagen",
+          action: "Stöbern",
+        },
+      },
+    },
+    quickLinks: {
+      title: "Schnellzugriffe",
+      sendChat: "Chat senden",
+      embedDocument: "Dokument einbetten",
+      createWorkspace: "Arbeitsbereich erstellen",
+    },
+    exploreMore: {
+      title: "Weitere Funktionen erkunden",
+      features: {
+        customAgents: {
+          title: "Benutzerdefinierte KI-Agenten",
+          description:
+            "Erstellen Sie leistungsstarke KI-Agenten und Automatisierungen ohne Code.",
+          primaryAction: "Chatten mit @agent",
+          secondaryAction: "Einen Agenten-Flow erstellen",
+        },
+        slashCommands: {
+          title: "Slash-Befehle",
+          description:
+            "Sparen Sie Zeit und fügen Sie Eingabeaufforderungen mit benutzerdefinierten Slash-Befehlen ein.",
+          primaryAction: "Einen Slash-Befehl erstellen",
+          secondaryAction: "Im Hub erkunden",
+        },
+        systemPrompts: {
+          title: "System-Eingabeaufforderungen",
+          description:
+            "Ändern Sie die System-Eingabeaufforderung, um die KI-Antworten eines Arbeitsbereichs anzupassen.",
+          primaryAction: "Eine System-Eingabeaufforderung ändern",
+          secondaryAction: "Eingabevariablen verwalten",
+        },
+      },
+    },
+    announcements: {
+      title: "Updates & Ankündigungen",
+    },
+    resources: {
+      title: "Ressourcen",
+      links: {
+        docs: "Dokumentation",
+        star: "Auf Github mit Stern versehen",
       slash_command: {
         success_title: null,
         success_description: null,
