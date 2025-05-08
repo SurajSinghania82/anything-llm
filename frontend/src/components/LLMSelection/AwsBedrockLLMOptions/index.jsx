@@ -21,7 +21,7 @@ export default function AwsBedrockLLMOptions({ settings }) {
                 target="_blank"
                 className="underline flex gap-x-1 items-center"
               >
-                Read more on how to use AWS Bedrock in AnythingLLM
+                Read more on how to use AWS Bedrock in AthenaLLM
                 <ArrowSquareOut size={14} />
               </a>
             </p>

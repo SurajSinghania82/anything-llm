@@ -1,11 +1,11 @@
 <a name="readme-top"></a>
 
 <p align="center">
-  <a href="https://anythingllm.com"><img src="https://github.com/Mintplex-Labs/anything-llm/blob/master/images/wordmark.png?raw=true" alt="AnythingLLM logo"></a>
+  <a href="https://anythingllm.com"><img src="https://github.com/Mintplex-Labs/anything-llm/blob/master/images/wordmark.png?raw=true" alt="AthenaLLM logo"></a>
 </p>
 
 <p align="center">
-    <b>AnythingLLM：</b> 您一直在寻找的全方位AI应用程序。<br />
+    <b>AthenaLLM：</b> 您一直在寻找的全方位AI应用程序。<br />
     与您的文档聊天，使用AI代理，高度可配置，多用户，无需繁琐的设置。
 </p>
 
@@ -29,7 +29,7 @@
 </p>
 
 <p align="center">
-👉 适用于桌面（Mac、Windows和Linux）的AnythingLLM！<a href="https://anythingllm.com/download" target="_blank">立即下载</a>
+👉 适用于桌面（Mac、Windows和Linux）的AthenaLLM！<a href="https://anythingllm.com/download" target="_blank">立即下载</a>
 </p>
 
 这是一个全栈应用程序，可以将任何文档、资源（如网址链接、音频、视频）或内容片段转换为上下文，以便任何大语言模型（LLM）在聊天期间作为参考使用。此应用程序允许您选择使用哪个LLM或向量数据库，同时支持多用户管理并设置不同权限。
@@ -45,11 +45,11 @@
 
 ### 产品概览
 
-AnythingLLM是一个全栈应用程序，您可以使用现成的商业大语言模型或流行的开源大语言模型，再结合向量数据库解决方案构建一个私有ChatGPT，不再受制于人：您可以本地运行，也可以远程托管，并能够与您提供的任何文档智能聊天。
+AthenaLLM是一个全栈应用程序，您可以使用现成的商业大语言模型或流行的开源大语言模型，再结合向量数据库解决方案构建一个私有ChatGPT，不再受制于人：您可以本地运行，也可以远程托管，并能够与您提供的任何文档智能聊天。
 
-AnythingLLM将您的文档划分为称为`workspaces` (工作区)的对象。工作区的功能类似于线程，同时增加了文档的容器化。工作区可以共享文档，但工作区之间的内容不会互相干扰或污染，因此您可以保持每个工作区的上下文清晰。
+AthenaLLM将您的文档划分为称为`workspaces` (工作区)的对象。工作区的功能类似于线程，同时增加了文档的容器化。工作区可以共享文档，但工作区之间的内容不会互相干扰或污染，因此您可以保持每个工作区的上下文清晰。
 
-## AnythingLLM的一些酷炫特性
+## AthenaLLM的一些酷炫特性
 - 🆕 [**完全兼容 MCP**](https://docs.anythingllm.com/mcp-compatibility/overview)
 - 🆕 [**无代码AI代理构建器**](https://docs.anythingllm.com/agent-flows/overview)
 - 🖼️ **多用户实例支持和权限管理（支持封闭源和开源LLM！）**
@@ -92,7 +92,7 @@ AnythingLLM将您的文档划分为称为`workspaces` (工作区)的对象。工
 
 **支持的嵌入模型：**
 
-- [AnythingLLM原生嵌入器](/server/storage/models/README.md)（默认）
+- [AthenaLLM原生嵌入器](/server/storage/models/README.md)（默认）
 - [OpenAI](https://openai.com)
 - [Azure OpenAI](https://azure.microsoft.com/en-us/products/ai-services/openai-service)
 - [LocalAi (全部)](https://localai.io/)
@@ -102,7 +102,7 @@ AnythingLLM将您的文档划分为称为`workspaces` (工作区)的对象。工
 
 **支持的转录模型：**
 
-- [AnythingLLM内置](https://github.com/Mintplex-Labs/anything-llm/tree/master/server/storage/models#audiovideo-transcription) （默认）
+- [AthenaLLM内置](https://github.com/Mintplex-Labs/anything-llm/tree/master/server/storage/models#audiovideo-transcription) （默认）
 - [OpenAI](https://openai.com/)
 
 **TTS (文本转语音) 支持：**
@@ -139,7 +139,7 @@ AnythingLLM将您的文档划分为称为`workspaces` (工作区)的对象。工
 
 ## 🛳 自托管
 
-Mintplex Labs和社区维护了许多部署方法、脚本和模板，您可以使用它们在本地运行AnythingLLM。请参阅下面的表格，了解如何在您喜欢的环境上部署，或自动部署。
+Mintplex Labs和社区维护了许多部署方法、脚本和模板，您可以使用它们在本地运行AthenaLLM。请参阅下面的表格，了解如何在您喜欢的环境上部署，或自动部署。
 | Docker | AWS | GCP | Digital Ocean | Render.com |
 |----------------------------------------|----|-----|---------------|------------|
 | [![在 Docker 上部署][docker-btn]][docker-deploy] | [![在 AWS 上部署][aws-btn]][aws-deploy] | [![在 GCP 上部署][gcp-btn]][gcp-deploy] | [![在DigitalOcean上部署][do-btn]][do-deploy] | [![在 Render.com 上部署][render-btn]][render-deploy] |
@@ -148,7 +148,7 @@ Mintplex Labs和社区维护了许多部署方法、脚本和模板，您可以�
 | --------------------------------------------------- |
 | [![在Railway上部署][railway-btn]][railway-deploy] |
 
-[其他方案：不使用Docker配置AnythingLLM实例 →](../BARE_METAL.md)
+[其他方案：不使用Docker配置AthenaLLM实例 →](../BARE_METAL.md)
 
 ## 如何设置开发环境
 
@@ -170,21 +170,21 @@ Mintplex Labs和社区维护了许多部署方法、脚本和模板，您可以�
 
 ## 远程信息收集与隐私保护
 
-由 Mintplex Labs Inc 开发的 AnythingLLM 包含一个收集匿名使用信息的 Telemetry 功能。
+由 Mintplex Labs Inc 开发的 AthenaLLM 包含一个收集匿名使用信息的 Telemetry 功能。
 
 <details>
-<summary><kbd>有关 AnythingLLM 的远程信息收集与隐私保护更多信息</kbd></summary>
+<summary><kbd>有关 AthenaLLM 的远程信息收集与隐私保护更多信息</kbd></summary>
 
 
 
 
 ### 为什么收集信息？
 
-我们使用这些信息来帮助我们理解 AnythingLLM 的使用情况，帮助我们确定新功能和错误修复的优先级，并帮助我们提高 AnythingLLM 的性能和稳定性。
+我们使用这些信息来帮助我们理解 AthenaLLM 的使用情况，帮助我们确定新功能和错误修复的优先级，并帮助我们提高 AthenaLLM 的性能和稳定性。
 
 ### 怎样关闭
 
-通过在服务器或 docker 的 `.env` 设置中将 `DISABLE_TELEMETRY` 设置为 “true” 来选择退出 Telemetry 远程信息收集功能。您也可以进入 AnythingLLM 应用 >>> 侧边栏最下方 >>> `隐私和数据` （Privacy&Data） >>> 找到最下方的 Anonymous Telemetry Enabled，点击绿色按钮让它变灰色，从而禁用信息收集功能。
+通过在服务器或 docker 的 `.env` 设置中将 `DISABLE_TELEMETRY` 设置为 “true” 来选择退出 Telemetry 远程信息收集功能。您也可以进入 AthenaLLM 应用 >>> 侧边栏最下方 >>> `隐私和数据` （Privacy&Data） >>> 找到最下方的 Anonymous Telemetry Enabled，点击绿色按钮让它变灰色，从而禁用信息收集功能。
 
 ### 你们跟踪收集哪些信息？
 

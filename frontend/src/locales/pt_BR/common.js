@@ -3,17 +3,17 @@ const TRANSLATIONS = {
   onboarding: {
     survey: {
       email: "Qual o seu email?",
-      useCase: "Para que fim pretende usar AnythingLLM",
+      useCase: "Para que fim pretende usar AthenaLLM",
       useCaseWork: "Para trabalho",
       useCasePersonal: "Uso pessoal",
       useCaseOther: "Outro",
-      comment: "Onde ouviu sobre AnythingLLM pela primeira vez",
+      comment: "Onde ouviu sobre AthenaLLM pela primeira vez",
       commentPlaceholder:
         "Reddit, Twitter, GitHub, YouTube, etc. - Conte para nós como você nos encontrou!",
       skip: "Ignorar pesquisa",
       thankYou: "Obrigado pelo seu feedback",
-      title: "Bem-vindo a AnythingLLM",
-      description: "Ajude-nos a construir AnythingLLM para si. Opcional",
+      title: "Bem-vindo a AthenaLLM",
+      description: "Ajude-nos a construir AthenaLLM para si. Opcional",
     },
     home: {
       title: "Bem-vindo a",
@@ -22,7 +22,7 @@ const TRANSLATIONS = {
     llm: {
       title: "Preferências LLM",
       description:
-        "AnythingLLM consegue trabalhar com diversos provedores LLM. Este é o serviço que lida com conversas.",
+        "AthenaLLM consegue trabalhar com diversos provedores LLM. Este é o serviço que lida com conversas.",
     },
     userSetup: {
       title: "Configuração de usuário",
@@ -52,7 +52,7 @@ const TRANSLATIONS = {
     },
     workspace: {
       title: "Crie seu primeiro workspace",
-      description: "Crie seu primeiro workspace e comece a usar o AnythingLLM.",
+      description: "Crie seu primeiro workspace e comece a usar o AthenaLLM.",
     },
   },
   common: {
@@ -126,11 +126,11 @@ const TRANSLATIONS = {
   },
   welcomeMessage: {
     part1:
-      "Bem-vindo ao AnythingLLM, AnythingLLM é uma ferramenta de IA de código aberto da Mintplex Labs que transforma qualquer coisa em um chatbot treinado que você pode consultar e conversar. AnythingLLM é um software BYOK (bring-your-own-keys | traga suas próprias chaves), portanto, não há assinatura, taxa ou cobranças para este software fora dos serviços que você deseja usar com ele.",
+      "Bem-vindo ao AthenaLLM, AthenaLLM é uma ferramenta de IA de código aberto da Mintplex Labs que transforma qualquer coisa em um chatbot treinado que você pode consultar e conversar. AthenaLLM é um software BYOK (bring-your-own-keys | traga suas próprias chaves), portanto, não há assinatura, taxa ou cobranças para este software fora dos serviços que você deseja usar com ele.",
     part2:
-      "AnythingLLM é a maneira mais fácil de reunir produtos de IA poderosos como OpenAi, GPT-4, LangChain, PineconeDB, ChromaDB e outros serviços em um pacote organizado sem complicações para aumentar sua produtividade em 100x.",
+      "AthenaLLM é a maneira mais fácil de reunir produtos de IA poderosos como OpenAi, GPT-4, LangChain, PineconeDB, ChromaDB e outros serviços em um pacote organizado sem complicações para aumentar sua produtividade em 100x.",
     part3:
-      "AnythingLLM pode ser executado totalmente localmente em sua máquina com pouca sobrecarga que você nem perceberá que está lá! Não é necessário GPU. A instalação em nuvem e localmente também está disponível.\nO ecossistema de ferramentas de IA fica mais poderoso a cada dia. AnythingLLM facilita o uso.",
+      "AthenaLLM pode ser executado totalmente localmente em sua máquina com pouca sobrecarga que você nem perceberá que está lá! Não é necessário GPU. A instalação em nuvem e localmente também está disponível.\nO ecossistema de ferramentas de IA fica mais poderoso a cada dia. AthenaLLM facilita o uso.",
     githubIssue: "Criar uma issue no GitHub",
     user1: "Como eu começo?!",
     part4:
@@ -139,7 +139,7 @@ const TRANSLATIONS = {
     user2:
       "Isso é como um Dropbox de IA ou algo assim? E quanto a conversar? Não é um chatbot?",
     part5:
-      "AnythingLLM é mais do que um Dropbox mais inteligente.\n\nAnythingLLM oferece duas maneiras de conversar com seus dados:\n\n<i>Consulta:</i> Seus chats retornarão dados ou inferências encontradas com os documentos em seu workspace ao qual tem acesso. Adicionar mais documentos ao Workspace o torna mais inteligente!\n\n<i>Conversacional:</i> Seus documentos + seu histórico de chat em andamento contribuem para o conhecimento do LLM ao mesmo tempo. Ótimo para adicionar informações em tempo real baseadas em texto ou correções e mal-entendidos que o LLM possa ter.\n\nVocê pode alternar entre qualquer modo \n<i>no meio da conversa!</i>",
+      "AthenaLLM é mais do que um Dropbox mais inteligente.\n\nAthenaLLM oferece duas maneiras de conversar com seus dados:\n\n<i>Consulta:</i> Seus chats retornarão dados ou inferências encontradas com os documentos em seu workspace ao qual tem acesso. Adicionar mais documentos ao Workspace o torna mais inteligente!\n\n<i>Conversacional:</i> Seus documentos + seu histórico de chat em andamento contribuem para o conhecimento do LLM ao mesmo tempo. Ótimo para adicionar informações em tempo real baseadas em texto ou correções e mal-entendidos que o LLM possa ter.\n\nVocê pode alternar entre qualquer modo \n<i>no meio da conversa!</i>",
     user3: "Uau, isso soa incrível, deixe-me experimentar já!",
     part6: "Divirta-se!",
     starOnGitHub: "Dar estrela no GitHub",
@@ -171,7 +171,7 @@ const TRANSLATIONS = {
       add: "Adicionar nova mensagem",
       save: "Salvar Mensagens",
       heading: "Explique para mim",
-      body: "os benefícios do AnythingLLM",
+      body: "os benefícios do AthenaLLM",
     },
     pfp: {
       title: "Imagem de Perfil do Assistente",
@@ -349,7 +349,7 @@ const TRANSLATIONS = {
   api: {
     title: "Chaves API",
     description:
-      "As chaves API permitem que o titular acesse e gerencie programaticamente esta instância do AnythingLLM.",
+      "As chaves API permitem que o titular acesse e gerencie programaticamente esta instância do AthenaLLM.",
     link: "Leia a documentação da API",
     generate: "Gerar Nova Chave API",
     table: {
@@ -361,7 +361,7 @@ const TRANSLATIONS = {
   llm: {
     title: "Preferência de LLM",
     description:
-      "Estas são as credenciais e configurações para seu provedor preferido de chat e incorporação de LLM. É importante que essas chaves estejam atualizadas e corretas, caso contrário, o AnythingLLM não funcionará corretamente.",
+      "Estas são as credenciais e configurações para seu provedor preferido de chat e incorporação de LLM. É importante que essas chaves estejam atualizadas e corretas, caso contrário, o AthenaLLM não funcionará corretamente.",
     provider: "Provedor de LLM",
   },
   transcription: {
@@ -370,7 +370,7 @@ const TRANSLATIONS = {
       "Estas são as credenciais e configurações para seu provedor preferido de modelo de transcrição. É importante que essas chaves estejam atualizadas e corretas, caso contrário, os arquivos de mídia e áudio não serão transcritos.",
     provider: "Provedor de Transcrição",
     "warn-start":
-      "Usar o modelo whisper local em máquinas com RAM ou CPU limitados pode travar o AnythingLLM ao processar arquivos de mídia.",
+      "Usar o modelo whisper local em máquinas com RAM ou CPU limitados pode travar o AthenaLLM ao processar arquivos de mídia.",
     "warn-recommend":
       "Recomendamos pelo menos 2GB de RAM e upload de arquivos <10Mb.",
     "warn-end":
@@ -381,11 +381,11 @@ const TRANSLATIONS = {
     "desc-start":
       "Ao usar um LLM que não suporta nativamente um mecanismo de incorporação - pode ser necessário especificar adicionalmente as credenciais para incorporação de texto.",
     "desc-end":
-      "A incorporação é o processo de transformar texto em vetores. Essas credenciais são necessárias para transformar seus arquivos e prompts em um formato que o AnythingLLM possa usar para processar.",
+      "A incorporação é o processo de transformar texto em vetores. Essas credenciais são necessárias para transformar seus arquivos e prompts em um formato que o AthenaLLM possa usar para processar.",
     provider: {
       title: "Provedor de Incorporação",
       description:
-        "Não é necessária configuração ao usar o mecanismo de incorporação nativo do AnythingLLM.",
+        "Não é necessária configuração ao usar o mecanismo de incorporação nativo do AthenaLLM.",
     },
   },
   text: {
@@ -412,7 +412,7 @@ const TRANSLATIONS = {
   vector: {
     title: "Banco de Dados Vetorial",
     description:
-      "Estas são as credenciais e configurações de como sua instância do AnythingLLM funcionará. É importante que essas chaves estejam atualizadas e corretas.",
+      "Estas são as credenciais e configurações de como sua instância do AthenaLLM funcionará. É importante que essas chaves estejam atualizadas e corretas.",
     provider: {
       title: "Provedor de Banco de Dados Vetorial",
       description: "Não há configuração necessária para o LanceDB.",
@@ -457,7 +457,7 @@ const TRANSLATIONS = {
     password: {
       title: "Proteção por Senha",
       description:
-        "Proteja sua instância do AnythingLLM com uma senha. Se você esquecer esta senha, não há método de recuperação, então certifique-se de salvar esta senha.",
+        "Proteja sua instância do AthenaLLM com uma senha. Se você esquecer esta senha, não há método de recuperação, então certifique-se de salvar esta senha.",
     },
     instance: {
       title: "Proteger Instância com Senha",
@@ -480,7 +480,7 @@ const TRANSLATIONS = {
   privacy: {
     title: "Privacidade e Tratamento de Dados",
     description:
-      "Esta é a sua configuração de como os provedores de terceiros conectados e o AnythingLLM tratam seus dados.",
+      "Esta é a sua configuração de como os provedores de terceiros conectados e o AthenaLLM tratam seus dados.",
     llm: "Seleção de LLM",
     embedding: "Preferência de Incorporação",
     vector: "Banco de Dados Vetorial",
