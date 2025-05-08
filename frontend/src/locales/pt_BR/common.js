@@ -1,6 +1,20 @@
 // Anything with "null" requires a translation. Contribute to translation via a PR!
 const TRANSLATIONS = {
   onboarding: {
+    survey: {
+      email: "Qual o seu email?",
+      useCase: "Para que fim pretende usar AthenaLLM",
+      useCaseWork: "Para trabalho",
+      useCasePersonal: "Uso pessoal",
+      useCaseOther: "Outro",
+      comment: "Onde ouviu sobre AthenaLLM pela primeira vez",
+      commentPlaceholder:
+        "Reddit, Twitter, GitHub, YouTube, etc. - Conte para nós como você nos encontrou!",
+      skip: "Ignorar pesquisa",
+      thankYou: "Obrigado pelo seu feedback",
+      title: "Bem-vindo a AthenaLLM",
+      description: "Ajude-nos a construir AthenaLLM para si. Opcional",
+    },
     home: {
       title: "Bem-vindo ao",
       getStarted: "Começar",
@@ -8,7 +22,7 @@ const TRANSLATIONS = {
     llm: {
       title: "Preferência de LLM",
       description:
-        "AnythingLLM funciona com vários provedores de LLM. Este será o serviço que lidará com os chats.",
+        "AthenaLLM consegue trabalhar com diversos provedores LLM. Este é o serviço que lida com conversas.",
     },
     userSetup: {
       title: "Configuração do Usuário",
@@ -52,7 +66,7 @@ const TRANSLATIONS = {
     },
     workspace: {
       title: "Crie seu primeiro workspace",
-      description: "Crie seu primeiro workspace e comece a usar o AnythingLLM.",
+      description: "Crie seu primeiro workspace e comece a usar o AthenaLLM.",
     },
   },
   common: {
@@ -234,7 +248,7 @@ const TRANSLATIONS = {
       add: "Adicionar mensagem",
       save: "Salvar Mensagens",
       heading: "Explique para mim",
-      body: "os benefícios do AnythingLLM",
+      body: "os benefícios do AthenaLLM",
     },
     pfp: {
       title: "Imagem do Assistente",
@@ -519,7 +533,8 @@ const TRANSLATIONS = {
   },
   api: {
     title: "Chaves API",
-    description: "Chaves API permitem acesso programático a esta instância.",
+    description:
+      "As chaves API permitem que o titular acesse e gerencie programaticamente esta instância do AthenaLLM.",
     link: "Leia a documentação da API",
     generate: "Gerar Nova Chave",
     table: {
@@ -551,8 +566,9 @@ const TRANSLATIONS = {
       "Credenciais e configurações do seu provedor de transcrição. Essas chaves devem estar corretas para processar arquivos de mídia.",
     provider: "Provedor de Transcrição",
     "warn-start":
-      "Usar o modelo local whisper em máquinas com RAM ou CPU limitada pode travar o AnythingLLM.",
-    "warn-recommend": "Recomendamos pelo menos 2GB de RAM e arquivos <10Mb.",
+      "Usar o modelo whisper local em máquinas com RAM ou CPU limitados pode travar o AthenaLLM ao processar arquivos de mídia.",
+    "warn-recommend":
+      "Recomendamos pelo menos 2GB de RAM e upload de arquivos <10Mb.",
     "warn-end":
       "O modelo interno será baixado automaticamente no primeiro uso.",
   },
@@ -629,7 +645,7 @@ const TRANSLATIONS = {
   privacy: {
     title: "Privacidade & Dados",
     description:
-      "Configurações de como provedores terceiros e o AnythingLLM lidam com seus dados.",
+      "Esta é a sua configuração de como os provedores de terceiros conectados e o AthenaLLM tratam seus dados.",
     llm: "Seleção de LLM",
     embedding: "Preferência de Vínculo",
     vector: "Banco de Dados Vetorial",

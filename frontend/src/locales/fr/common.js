@@ -146,7 +146,7 @@ const TRANSLATIONS = {
       add: "Ajouter un nouveau message",
       save: "Enregistrer les messages",
       heading: "Expliquez-moi",
-      body: "les avantages de AnythingLLM",
+      body: "les avantages de AthenaLLM",
     },
     pfp: {
       title: "Image de profil de l'assistant",
@@ -339,7 +339,7 @@ const TRANSLATIONS = {
   api: {
     title: "Clés API",
     description:
-      "Les clés API permettent au titulaire d'accéder et de gérer de manière programmatique cette instance AnythingLLM.",
+      "Les clés API permettent au titulaire d'accéder et de gérer de manière programmatique cette instance AthenaLLM.",
     link: "Lisez la documentation de l'API",
     generate: "Générer une nouvelle clé API",
     table: {
@@ -351,7 +351,7 @@ const TRANSLATIONS = {
   llm: {
     title: "Préférence LLM",
     description:
-      "Voici les identifiants et les paramètres de votre fournisseur LLM de chat et d'intégration préféré. Il est important que ces clés soient actuelles et correctes, sinon AnythingLLM ne fonctionnera pas correctement.",
+      "Voici les identifiants et les paramètres de votre fournisseur LLM de chat et d'intégration préféré. Il est important que ces clés soient actuelles et correctes, sinon AthenaLLM ne fonctionnera pas correctement.",
     provider: "Fournisseur LLM",
     providers: {
       azure_openai: {
@@ -371,7 +371,7 @@ const TRANSLATIONS = {
       "Voici les identifiants et les paramètres de votre fournisseur de modèle de transcription préféré. Il est important que ces clés soient actuelles et correctes, sinon les fichiers multimédias et audio ne seront pas transcrits.",
     provider: "Fournisseur de transcription",
     "warn-start":
-      "L'utilisation du modèle local whisper sur des machines avec une RAM ou un CPU limités peut bloquer AnythingLLM lors du traitement des fichiers multimédias.",
+      "L'utilisation du modèle local whisper sur des machines avec une RAM ou un CPU limités peut bloquer AthenaLLM lors du traitement des fichiers multimédias.",
     "warn-recommend":
       "Nous recommandons au moins 2 Go de RAM et des fichiers téléchargés <10 Mo.",
     "warn-end":
@@ -382,9 +382,11 @@ const TRANSLATIONS = {
     "desc-start":
       "Lorsque vous utilisez un LLM qui ne supporte pas nativement un moteur d'intégration - vous devrez peut-être spécifier en plus des identifiants pour intégrer le texte.",
     "desc-end":
-      "L'intégration est le processus de transformation du texte en vecteurs. Ces identifiants sont nécessaires pour transformer vos fichiers et invites en un format que AnythingLLM peut utiliser pour traiter.",
+      "L'intégration est le processus de transformation du texte en vecteurs. Ces identifiants sont nécessaires pour transformer vos fichiers et invites en un format que AthenaLLM peut utiliser pour traiter.",
     provider: {
       title: "Fournisseur d'intégration",
+      description:
+        "Aucune configuration n'est nécessaire lors de l'utilisation du moteur d'intégration natif de AthenaLLM.",
     },
   },
   text: {
@@ -408,7 +410,7 @@ const TRANSLATIONS = {
   vector: {
     title: "Base de données vectorielle",
     description:
-      "Voici les identifiants et les paramètres de fonctionnement de votre instance AnythingLLM. Il est important que ces clés soient actuelles et correctes.",
+      "Voici les identifiants et les paramètres de fonctionnement de votre instance AthenaLLM. Il est important que ces clés soient actuelles et correctes.",
     provider: {
       title: "Fournisseur de base de données vectorielle",
       description: "Aucune configuration n'est nécessaire pour LanceDB.",
@@ -453,7 +455,7 @@ const TRANSLATIONS = {
   privacy: {
     title: "Confidentialité et gestion des données",
     description:
-      "Voici votre configuration pour la gestion des données et des fournisseurs tiers connectés avec AnythingLLM.",
+      "Voici votre configuration pour la gestion des données et des fournisseurs tiers connectés avec AthenaLLM.",
     llm: "Sélection LLM",
     embedding: "Préférence d'intégration",
     vector: "Base de données vectorielle",

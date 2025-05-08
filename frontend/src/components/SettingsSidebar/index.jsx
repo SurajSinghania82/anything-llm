@@ -295,7 +295,7 @@ const SidebarOptions = ({ user = null, t }) => (
           flex={true}
           roles={["admin"]}
         />
-        <Option
+        {/* <Option
           btnText="Community Hub"
           icon={<Globe className="h-5 w-5 flex-shrink-0" />}
           childOptions={[
@@ -318,7 +318,7 @@ const SidebarOptions = ({ user = null, t }) => (
               roles: ["admin"],
             },
           ]}
-        />
+        /> */}
         <Option
           btnText={t("settings.customization")}
           icon={<PencilSimpleLine className="h-5 w-5 flex-shrink-0" />}
@@ -374,12 +374,12 @@ const SidebarOptions = ({ user = null, t }) => (
               flex: true,
               roles: ["admin"],
             },
-            {
-              btnText: t("settings.browser-extension"),
-              href: paths.settings.browserExtension(),
-              flex: true,
-              roles: ["admin", "manager"],
-            },
+            // {
+            //   btnText: t("settings.browser-extension"),
+            //   href: paths.settings.browserExtension(),
+            //   flex: true,
+            //   roles: ["admin", "manager"],
+            // },
           ]}
         />
         <Option
@@ -460,8 +460,8 @@ function AppVersion() {
   if (isLoading) return null;
   return (
     <Link
-      to={`https://github.com/Mintplex-Labs/anything-llm/releases/tag/v${version}`}
-      target="_blank"
+      // to={`https://github.com/Mintplex-Labs/anything-llm/releases/tag/v${version}`}
+      // target="_blank"
       rel="noreferrer"
       className="text-theme-text-secondary light:opacity-80 opacity-50 text-xs mx-3"
     >

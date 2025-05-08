@@ -8,7 +8,7 @@ const TRANSLATIONS = {
     llm: {
       title: "LLM 偏好",
       description:
-        "AnythingLLM 可以与多家 LLM 提供商合作。这将是处理聊天的服务。",
+        "AthenaLLM 可以与多家 LLM 提供商合作。这将是处理聊天的服务。",
     },
     userSetup: {
       title: "用户设置",
@@ -34,14 +34,14 @@ const TRANSLATIONS = {
       settingsHint: "这些设置可以随时在设置中重新配置。",
     },
     survey: {
-      title: "欢迎使用 AnythingLLM",
-      description: "帮助我们为你的需求打造 AnythingLLM。可选。",
+      title: "欢迎使用 AthenaLLM",
+      description: "帮助我们为你的需求打造 AthenaLLM。可选。",
       email: "你的电子邮件是什么？",
-      useCase: "你将如何使用 AnythingLLM？",
+      useCase: "你将如何使用 AthenaLLM？",
       useCaseWork: "用于工作",
       useCasePersonal: "用于个人使用",
       useCaseOther: "其他",
-      comment: "你是如何听说 AnythingLLM 的？",
+      comment: "你是如何听说 AthenaLLM 的？",
       commentPlaceholder:
         "Reddit，Twitter，GitHub，YouTube 等 - 让我们知道你是如何找到我们的！",
       skip: "跳过调查",
@@ -49,7 +49,7 @@ const TRANSLATIONS = {
     },
     workspace: {
       title: "创建你的第一个工作区",
-      description: "创建你的第一个工作区并开始使用 AnythingLLM。",
+      description: "创建你的第一个工作区并开始使用 AthenaLLM。",
     },
   },
   common: {
@@ -227,7 +227,7 @@ const TRANSLATIONS = {
       add: "添加新消息",
       save: "保存消息",
       heading: "向我解释",
-      body: "AnythingLLM 的好处",
+      body: "AthenaLLM 的好处",
     },
     pfp: {
       title: "助理头像",
@@ -497,7 +497,7 @@ const TRANSLATIONS = {
   },
   api: {
     title: "API 密钥",
-    description: "API 密钥允许持有者以编程方式访问和管理此 AnythingLLM 实例。",
+    description: "API 密钥允许持有者以编程方式访问和管理此 AthenaLLM 实例。",
     link: "阅读 API 文档",
     generate: "生成新的 API 密钥",
     table: {
@@ -509,7 +509,7 @@ const TRANSLATIONS = {
   llm: {
     title: "LLM 首选项",
     description:
-      "这些是你首选的 LLM 聊天和嵌入提供商的凭据和设置。重要的是，确保这些密钥是最新的和正确的，否则 AnythingLLM 将无法正常运行。",
+      "这些是你首选的 LLM 聊天和嵌入提供商的凭据和设置。重要的是，这些密钥是最新的和正确的，否则 AthenaLLM 将无法正常运行。",
     provider: "LLM 提供商",
     providers: {
       azure_openai: {
@@ -529,7 +529,7 @@ const TRANSLATIONS = {
       "这些是你的首选转录模型提供商的凭据和设置。重要的是这些密钥是最新且正确的，否则媒体文件和音频将无法转录。",
     provider: "转录提供商",
     "warn-start":
-      "在 RAM 或 CPU 有限的计算机上使用本地耳语模型可能会在处理媒体文件时停止 AnythingLLM。",
+      "在 RAM 或 CPU 有限的计算机上使用本地耳语模型可能会在处理媒体文件时停止 AthenaLLM。",
     "warn-recommend": "我们建议至少 2GB RAM 并上传 <10Mb 的文件。",
     "warn-end": "内置模型将在首次使用时自动下载。",
   },
@@ -538,9 +538,10 @@ const TRANSLATIONS = {
     "desc-start":
       "当使用本身不支持嵌入引擎的 LLM 时，你可能需要额外指定用于嵌入文本的凭据。",
     "desc-end":
-      "嵌入是将文本转换为矢量的过程。需要这些凭据才能将你的文件和提示转换为 AnythingLLM 可以用来处理的格式。",
+      "嵌入是将文本转换为矢量的过程。需要这些凭据才能将你的文件和提示转换为 AthenaLLM 可以用来处理的格式。",
     provider: {
       title: "嵌入引擎提供商",
+      description: "使用 AthenaLLM 的本机嵌入引擎时不需要设置。",
     },
   },
   text: {
@@ -561,7 +562,7 @@ const TRANSLATIONS = {
   vector: {
     title: "向量数据库",
     description:
-      "这些是 AnythingLLM 实例如何运行的凭据和设置。重要的是，这些密钥是最新的和正确的。",
+      "这些是 AthenaLLM 实例如何运行的凭据和设置。重要的是，这些密钥是最新的和正确的。",
     provider: {
       title: "向量数据库提供商",
       description: "LanceDB 不需要任何配置。",
@@ -604,7 +605,7 @@ const TRANSLATIONS = {
   privacy: {
     title: "隐私和数据处理",
     description:
-      "这是你对如何处理连接的第三方提供商和AnythingLLM的数据的配置。",
+      "这是你对如何处理连接的第三方提供商和AthenaLLM的数据的配置。",
     llm: "LLM 选择",
     embedding: "嵌入首选项",
     vector: "向量数据库",

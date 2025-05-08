@@ -81,9 +81,9 @@ export default function ExploreFeatures() {
           primaryAction={t(
             "main-page.exploreMore.features.slashCommands.primaryAction"
           )}
-          secondaryAction={t(
-            "main-page.exploreMore.features.slashCommands.secondaryAction"
-          )}
+          // secondaryAction={t(
+          //   "main-page.exploreMore.features.slashCommands.secondaryAction"
+          // )}
           onPrimaryAction={setSlashCommand}
           onSecondaryAction={exploreSlashCommands}
           isNew={false}

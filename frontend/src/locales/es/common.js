@@ -240,7 +240,7 @@ const TRANSLATIONS = {
       add: "Agregar nuevo mensaje",
       save: "Guardar mensajes",
       heading: "Explícame",
-      body: "los beneficios de AnythingLLM",
+      body: "los beneficios de AthenaLLM",
     },
     pfp: {
       title: "Imagen de perfil del asistente",
@@ -588,9 +588,11 @@ const TRANSLATIONS = {
     "desc-start":
       "Cuando se utiliza un LLM que no admite de forma nativa un motor de incrustación, es posible que debas especificar credenciales adicionales para la incrustación de texto.",
     "desc-end":
-      "La incrustación es el proceso de convertir texto en vectores. Estas credenciales son necesarias para convertir tus archivos y prompts en un formato que AnythingLLM pueda usar para procesar.",
+      "La incrustación es el proceso de convertir texto en vectores. Estas credenciales son necesarias para convertir tus archivos y prompts en un formato que AthenaLLM pueda usar para procesar.",
     provider: {
       title: "Proveedor de incrustación",
+      description:
+        "No se requiere configuración cuando se utiliza el motor de incrustación nativo de AthenaLLM.",
     },
   },
   text: {

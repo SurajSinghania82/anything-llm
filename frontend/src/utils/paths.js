@@ -50,22 +50,22 @@ export default {
     },
   },
   github: () => {
-    return "https://github.com/Mintplex-Labs/anything-llm";
+    return "https://github.com/repository";
   },
   discord: () => {
     return "https://discord.com/invite/6UyHPeGZAC";
   },
   docs: () => {
-    return "https://docs.anythingllm.com";
+    return "https://docs.athena.coreinsightsai.com";
   },
   chatModes: () => {
-    return "https://docs.anythingllm.com/features/chat-modes";
+    return "https://docs.athena.coreinsightsai.com/features/chat-modes";
   },
   mailToMintplex: () => {
-    return "mailto:team@mintplexlabs.com";
+    return "mailto:clientrelations@coreinsightsai.com";
   },
   hosting: () => {
-    return "https://my.mintplexlabs.com/aio-checkout?product=anythingllm";
+    return "https://docs.athena.coreinsightsai.com/aio-checkout?product=anythingllm";
   },
   workspace: {
     chat: (slug, options = {}) => {
@@ -180,7 +180,7 @@ export default {
     website: () => {
       return import.meta.env.DEV
         ? `http://localhost:5173`
-        : `https://hub.anythingllm.com`;
+        : `https://docs.athena.coreinsightsai.com`;
     },
     /**
      * View more items of a given type on the community hub.
@@ -207,7 +207,7 @@ export default {
       return `${this.website()}/me`;
     },
     noPrivateItems: () => {
-      return "https://docs.anythingllm.com/community-hub/faq#no-private-items";
+      return "https://docs.athena.coreinsightsai.com/community-hub/faq#no-private-items";
     },
   },
 

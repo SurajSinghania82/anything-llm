@@ -76,7 +76,7 @@ function ThirdParty({ settings }) {
   const VectorDb = VECTOR_DB_PRIVACY?.[vectorDb] || FALLBACKS.VECTOR(vectorDb);
 
   return (
-    <div className="py-8 w-full flex items-start justify-center flex-col gap-y-6 border-b-2 border-theme-sidebar-border">
+    <div className="py-8 w-full flex items-start justify-center flex-col gap-y-6 border-theme-sidebar-border">
       <div className="flex flex-col gap-8">
         <div className="flex flex-col gap-y-2 border-b border-zinc-500/50 pb-4">
           <div className="text-theme-text-primary text-base font-bold">
@@ -163,7 +163,7 @@ function TelemetryLogs({ settings }) {
 
   return (
     <div className="relative w-full max-h-full">
-      <div className="relative rounded-lg">
+      {/* <div className="relative rounded-lg">
         <div className="flex items-start justify-between px-6 py-4"></div>
         <div className="space-y-6 flex h-full w-full">
           <div className="w-full flex flex-col gap-y-4">
@@ -203,7 +203,7 @@ function TelemetryLogs({ settings }) {
             dedicated to building the best solution for integrating AI and
             documents privately and securely. If you do decide to turn off
             telemetry all we ask is to consider sending us feedback and thoughts
-            so that we can continue to improve AnythingLLM for you.{" "}
+            so that we can continue to improve AthenaLLM for you.{" "}
             <a
               href="mailto:team@mintplexlabs.com"
               className="underline text-blue-400"
@@ -214,7 +214,7 @@ function TelemetryLogs({ settings }) {
             .
           </p>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

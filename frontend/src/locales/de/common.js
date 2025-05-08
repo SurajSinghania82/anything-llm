@@ -239,7 +239,7 @@ const TRANSLATIONS = {
       add: "Neue Nachricht hinzufügen",
       save: "Nachrichten speichern",
       heading: "Erkläre mir",
-      body: "die Vorteile von AnythingLLM",
+      body: "die Vorteile von AthenaLLM",
     },
     pfp: {
       title: "Assistent-Profilbild",
@@ -534,7 +534,7 @@ const TRANSLATIONS = {
   api: {
     title: "API-Schlüssel",
     description:
-      "API-Schlüssel ermöglichen es dem Besitzer, programmatisch auf diese AnythingLLM-Instanz zuzugreifen und sie zu verwalten.",
+      "API-Schlüssel ermöglichen es dem Besitzer, programmatisch auf diese AthenaLLM-Instanz zuzugreifen und sie zu verwalten.",
     link: "Lesen Sie die API-Dokumentation",
     generate: "Neuen API-Schlüssel generieren",
     table: {
@@ -546,7 +546,7 @@ const TRANSLATIONS = {
   llm: {
     title: "LLM-Präferenz",
     description:
-      "Dies sind die Anmeldeinformationen und Einstellungen für Ihren bevorzugten LLM-Chat- und Einbettungsanbieter. Es ist wichtig, dass diese Schlüssel aktuell und korrekt sind, sonst wird AnythingLLM nicht richtig funktionieren.",
+      "Dies sind die Anmeldeinformationen und Einstellungen für Ihren bevorzugten LLM-Chat- und Einbettungsanbieter. Es ist wichtig, dass diese Schlüssel aktuell und korrekt sind, sonst wird AthenaLLM nicht richtig funktionieren.",
     provider: "LLM-Anbieter",
     providers: {
       azure_openai: {
@@ -566,7 +566,7 @@ const TRANSLATIONS = {
       "Dies sind die Anmeldeinformationen und Einstellungen für Ihren bevorzugten Transkriptionsmodellanbieter. Es ist wichtig, dass diese Schlüssel aktuell und korrekt sind, sonst werden Mediendateien und Audio nicht transkribiert.",
     provider: "Transkriptionsanbieter",
     "warn-start":
-      "Die Verwendung des lokalen Whisper-Modells auf Maschinen mit begrenztem RAM oder CPU kann AnythingLLM bei der Verarbeitung von Mediendateien zum Stillstand bringen.",
+      "Die Verwendung des lokalen Whisper-Modells auf Maschinen mit begrenztem RAM oder CPU kann AthenaLLM bei der Verarbeitung von Mediendateien zum Stillstand bringen.",
     "warn-recommend":
       "Wir empfehlen mindestens 2 GB RAM und das Hochladen von Dateien <10 MB.",
     "warn-end":
@@ -577,9 +577,11 @@ const TRANSLATIONS = {
     "desc-start":
       "Bei der Verwendung eines LLM, das keine native Unterstützung für eine Einbettungs-Engine bietet, müssen Sie möglicherweise zusätzlich Anmeldeinformationen für die Texteinbettung angeben.",
     "desc-end":
-      "Einbettung ist der Prozess, Text in Vektoren umzuwandeln. Diese Anmeldeinformationen sind erforderlich, um Ihre Dateien und Prompts in ein Format umzuwandeln, das AnythingLLM zur Verarbeitung verwenden kann.",
+      "Einbettung ist der Prozess, Text in Vektoren umzuwandeln. Diese Anmeldeinformationen sind erforderlich, um Ihre Dateien und Prompts in ein Format umzuwandeln, das AthenaLLM zur Verarbeitung verwenden kann.",
     provider: {
       title: "Einbettungsanbieter",
+      description:
+        "Bei Verwendung der nativen Einbettungs-Engine von AthenaLLM ist keine Einrichtung erforderlich.",
     },
   },
   text: {
@@ -603,7 +605,7 @@ const TRANSLATIONS = {
   vector: {
     title: "Vektordatenbank",
     description:
-      "Dies sind die Anmeldeinformationen und Einstellungen für die Funktionsweise Ihrer AnythingLLM-Instanz. Es ist wichtig, dass diese Schlüssel aktuell und korrekt sind.",
+      "Dies sind die Anmeldeinformationen und Einstellungen für die Funktionsweise Ihrer AthenaLLM-Instanz. Es ist wichtig, dass diese Schlüssel aktuell und korrekt sind.",
     provider: {
       title: "Vektordatenbankanbieter",
       description: "Für LanceDB ist keine Konfiguration erforderlich.",
@@ -648,7 +650,7 @@ const TRANSLATIONS = {
   privacy: {
     title: "Datenschutz & Datenverarbeitung",
     description:
-      "Dies ist Ihre Konfiguration dafür, wie verbundene Drittanbieter und AnythingLLM Ihre Daten behandeln.",
+      "Dies ist Ihre Konfiguration dafür, wie verbundene Drittanbieter und AthenaLLM Ihre Daten behandeln.",
     llm: "LLM-Auswahl",
     embedding: "Einbettungspräferenz",
     vector: "Vektordatenbank",
@@ -831,7 +833,7 @@ const TRANSLATIONS = {
       fetching: "Wird abgerufen...",
       "fetch-website": "Website abrufen",
       "privacy-notice":
-        "Diese Dateien werden zum Dokumentenprozessor hochgeladen, der auf dieser AnythingLLM-Instanz läuft. Diese Dateien werden nicht an Dritte gesendet oder geteilt.",
+        "Diese Dateien werden zum Dokumentenprozessor hochgeladen, der auf dieser AthenaLLM-Instanz läuft. Diese Dateien werden nicht an Dritte gesendet oder geteilt.",
     },
     pinning: {
       what_pinning: "Was bedeutet es Dokumente anzuheften?",
@@ -1004,6 +1006,145 @@ const TRANSLATIONS = {
           button: null,
         },
       },
+      "support-email": {
+        title: null,
+        description: null,
+      },
+      "app-name": {
+        title: null,
+        description: null,
+      },
+      "chat-message-alignment": {
+        title: null,
+        description: null,
+      },
+      "display-language": {
+        title: null,
+        description: null,
+      },
+      logo: {
+        title: null,
+        description: null,
+        add: null,
+        recommended: null,
+        remove: null,
+        replace: null,
+      },
+      "welcome-messages": {
+        title: null,
+        description: null,
+        new: null,
+        system: null,
+        user: null,
+        message: null,
+        assistant: null,
+        "double-click": null,
+        save: null,
+      },
+      "browser-appearance": {
+        title: null,
+        description: null,
+        tab: {
+          title: null,
+          description: null,
+        },
+        favicon: {
+          title: null,
+          description: null,
+        },
+      },
+      "sidebar-footer": {
+        title: null,
+        description: null,
+        icon: null,
+        link: null,
+      },
+    },
+  },
+  "main-page": {
+    noWorkspaceError:
+      "Bitte erstellen Sie einen Arbeitsbereich, bevor Sie einen Chat beginnen.",
+    checklist: {
+      title: "Erste Schritte",
+      tasksLeft: "Aufgaben übrig",
+      completed: "Sie sind auf dem Weg, ein AthenaLLM-Experte zu werden!",
+      dismiss: "schließen",
+      tasks: {
+        create_workspace: {
+          title: "Einen Arbeitsbereich erstellen",
+          description:
+            "Erstellen Sie Ihren ersten Arbeitsbereich, um zu beginnen",
+          action: "Erstellen",
+        },
+        send_chat: {
+          title: "Einen Chat senden",
+          description: "Starten Sie ein Gespräch mit Ihrem KI-Assistenten",
+          action: "Chat",
+        },
+        embed_document: {
+          title: "Ein Dokument einbetten",
+          description:
+            "Fügen Sie Ihr erstes Dokument zu Ihrem Arbeitsbereich hinzu",
+          action: "Einbetten",
+        },
+        setup_system_prompt: {
+          title: "Ein System-Prompt einrichten",
+          description: "Konfigurieren Sie das Verhalten Ihres KI-Assistenten",
+          action: "Einrichten",
+        },
+        define_slash_command: {
+          title: "Einen Slash-Befehl definieren",
+          description:
+            "Erstellen Sie benutzerdefinierte Befehle für Ihren Assistenten",
+          action: "Definieren",
+        },
+        visit_community: {
+          title: "Community Hub besuchen",
+          description: "Entdecken Sie Community-Ressourcen und Vorlagen",
+          action: "Stöbern",
+        },
+      },
+    },
+    quickLinks: {
+      title: "Schnellzugriffe",
+      sendChat: "Chat senden",
+      embedDocument: "Dokument einbetten",
+      createWorkspace: "Arbeitsbereich erstellen",
+    },
+    exploreMore: {
+      title: "Weitere Funktionen erkunden",
+      features: {
+        customAgents: {
+          title: "Benutzerdefinierte KI-Agenten",
+          description:
+            "Erstellen Sie leistungsstarke KI-Agenten und Automatisierungen ohne Code.",
+          primaryAction: "Chatten mit @agent",
+          secondaryAction: "Einen Agenten-Flow erstellen",
+        },
+        slashCommands: {
+          title: "Slash-Befehle",
+          description:
+            "Sparen Sie Zeit und fügen Sie Eingabeaufforderungen mit benutzerdefinierten Slash-Befehlen ein.",
+          primaryAction: "Einen Slash-Befehl erstellen",
+          secondaryAction: "Im Hub erkunden",
+        },
+        systemPrompts: {
+          title: "System-Eingabeaufforderungen",
+          description:
+            "Ändern Sie die System-Eingabeaufforderung, um die KI-Antworten eines Arbeitsbereichs anzupassen.",
+          primaryAction: "Eine System-Eingabeaufforderung ändern",
+          secondaryAction: "Eingabevariablen verwalten",
+        },
+      },
+    },
+    announcements: {
+      title: "Updates & Ankündigungen",
+    },
+    resources: {
+      title: "Ressourcen",
+      links: {
+        docs: "Dokumentation",
+        star: "Auf Github mit Stern versehen",
       slash_command: {
         success_title: null,
         success_description: null,
@@ -1061,6 +1202,7 @@ const TRANSLATIONS = {
       "Sie sind nicht zugewiesen zu einem Arbeitsbereich.\nBitte kontaktieren Sie Ihren Administrator, um Zugriff auf einen Arbeitsbereich zu erhalten.",
     goToWorkspace: 'Zurück zum Arbeitsbereich "{{workspace}}"',
   },
+}
 };
 
 export default TRANSLATIONS;

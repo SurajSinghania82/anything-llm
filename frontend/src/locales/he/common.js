@@ -231,7 +231,7 @@ const TRANSLATIONS = {
       add: "הוסף הודעה חדשה",
       save: "שמור הודעות",
       heading: "הסבר לי",
-      body: "את היתרונות של AnythingLLM",
+      body: "את היתרונות של AthenaLLM",
     },
     pfp: {
       title: "תמונת פרופיל של העוזר",
