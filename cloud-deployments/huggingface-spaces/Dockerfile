@@ -23,7 +23,7 @@ FROM mintplexlabs/anythingllm:render
 USER root
 RUN mkdir -p /data/storage
 RUN ln -s /data/storage /storage
-USER anythingllm
+USER athenallm
 
 ENV STORAGE_DIR="/data/storage"
 ENV SERVER_PORT=7860
