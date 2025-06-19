@@ -2685,7 +2685,7 @@
                   "example": [
                     {
                       "role": "user",
-                      "content": "What is AnythinglLM?"
+                      "content": "What is AthenaLLM?"
                     },
                     {
                       "role": "assistant",
