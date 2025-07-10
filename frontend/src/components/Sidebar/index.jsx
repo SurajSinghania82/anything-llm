@@ -13,7 +13,14 @@ import paths from "@/utils/paths";
 import { useTranslation } from "react-i18next";
 import { useSidebarToggle, ToggleSidebarButton } from "./SidebarToggle";
 
-export default function Sidebar() {
+// Glassmorphic styles
+const SIDEBAR_BG = "rgba(3, 7, 15, 0.88)";
+const SIDEBAR_BORDER = "1.5px solid rgba(255,255,255,0.10)";
+const SIDEBAR_SHADOW = "0 8px 32px 0 rgba(31,38,135,0.25)";
+const SIDEBAR_BLUR = "blur(18px)";
+const SIDEBAR_RADIUS = "28px";
+
+export default function Sidebar({ children }) {
   const { user } = useUser();
   const { logo } = useLogo();
   const sidebarRef = useRef(null);
@@ -27,61 +34,111 @@ export default function Sidebar() {
 
   return (
     <>
+      {/* Toggle button always visible on desktop */}
+      <div className="hidden md:block">
+        <ToggleSidebarButton
+          showSidebar={showSidebar}
+          setShowSidebar={setShowSidebar}
+        />
+      </div>
       <div
         style={{
-          width: showSidebar ? "292px" : "0px",
-          paddingLeft: showSidebar ? "0px" : "16px",
+          width: showSidebar ? "310px" : "0px",
+          minWidth: showSidebar ? "310px" : "0px",
+          transition: "width 0.5s, min-width 0.5s",
         }}
-        className="transition-all duration-500"
+        className="h-screen flex flex-col items-center justify-between fixed left-0 top-0 z-30"
       >
-        <div className="flex shrink-0 w-full justify-center my-[18px]">
-          <div className="flex justify-between w-[250px] min-w-[250px]">
-            <Link to={paths.home()} aria-label="Home">
+        <div
+          ref={sidebarRef}
+          style={{
+            background: SIDEBAR_BG,
+            border: SIDEBAR_BORDER,
+            boxShadow: SIDEBAR_SHADOW,
+            backdropFilter: SIDEBAR_BLUR,
+            borderRadius: SIDEBAR_RADIUS,
+            transition: "background 0.5s, box-shadow 0.5s, border 0.5s",
+            width: "100%",
+            height: "96vh",
+            margin: "2vh 0",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            overflow: "hidden",
+            position: "relative",
+          }}
+        >
+          {/* Logo and toggle */}
+          <div className="w-full flex items-center justify-between px-8 py-7">
+            <Link to={paths.home()} aria-label="Home" className="flex items-center gap-2">
               <img
                 src={logo}
                 alt="Logo"
-                className={`rounded max-h-[24px] object-contain transition-opacity duration-500 ${showSidebar ? "opacity-100" : "opacity-0"}`}
+                className="rounded-lg max-h-[38px] object-contain shadow-lg"
+                style={{ transition: "opacity 0.5s" }}
               />
             </Link>
-            {canToggleSidebar && (
-              <ToggleSidebarButton
-                showSidebar={showSidebar}
-                setShowSidebar={setShowSidebar}
-              />
-            )}
+            
           </div>
-        </div>
-        <div
-          ref={sidebarRef}
-          className="relative m-[16px] rounded-[16px] bg-theme-bg-sidebar border-[2px] border-theme-sidebar-border light:border-none min-w-[250px] p-[10px] h-[calc(100%-76px)]"
-        >
-          <div className="flex flex-col h-full overflow-x-hidden">
-            <div className="flex-grow flex flex-col min-w-[235px]">
-              <div className="relative h-[calc(100%-60px)] flex flex-col w-full justify-between pt-[10px] overflow-y-scroll no-scroll">
-                <div className="flex flex-col gap-y-2 pb-[60px] overflow-y-scroll no-scroll">
-                  <div className="flex gap-x-2 items-center justify-between">
-                    {(!user || user?.role !== "default") && (
-                      <button
-                        onClick={showNewWsModal}
-                        className="light:bg-[#C2E7FE] light:hover:bg-[#7CD4FD] flex flex-grow w-[75%] h-[44px] gap-x-2 py-[5px] px-2.5 mb-2 bg-white rounded-[8px] text-sidebar justify-center items-center hover:bg-opacity-80 transition-all duration-300"
-                      >
-                        <Plus size={18} weight="bold" />
-                        <p className="text-sidebar text-sm font-semibold">
-                          {t("new-workspace.title")}
-                        </p>
-                      </button>
-                    )}
-                  </div>
-                  <ActiveWorkspaces />
-                </div>
-              </div>
-              <div className="absolute bottom-0 left-0 right-0 pt-4 pb-3 rounded-b-[16px] bg-theme-bg-sidebar bg-opacity-80 backdrop-filter backdrop-blur-md z-1">
-                <Footer />
-              </div>
+
+          {/* Workspaces and actions */}
+          <div className="flex-1 w-full flex flex-col items-center px-6 overflow-y-auto">
+            <div className="flex flex-col gap-4 w-full">
+              {(!user || user?.role !== "default") && (
+                <button
+                  onClick={showNewWsModal}
+                  className="flex items-center gap-2 px-4 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-2xl shadow-md transition-all duration-200 w-full justify-center backdrop-blur-md border border-white/10"
+                  style={{ marginBottom: "8px" }}
+                >
+                  <Plus size={20} weight="bold" />
+                  <span className="text-base">{t("new-workspace.title")}</span>
+                </button>
+              )}
+              <ActiveWorkspaces />
             </div>
+          </div>
+
+          {/* Settings button floating above footer */}
+          <div className="w-full flex justify-center mb-2">
+            <div
+              className="flex items-center justify-center bg-white/10 hover:bg-white/20 text-white rounded-full p-3 shadow-lg transition-all duration-200 backdrop-blur-md border border-white/10"
+              style={{
+                position: "absolute",
+                bottom: "70px",
+                left: "50%",
+                transform: "translateX(-50%)",
+                zIndex: 2,
+              }}
+              aria-label="Settings"
+            >
+              <SettingsButton />
+            </div>
+          </div>
+
+          {/* Footer */}
+          <div
+            className="w-full px-6 py-4"
+            style={{
+              background: "rgba(17,24,39,0.65)",
+              borderTop: "1px solid rgba(255,255,255,0.06)",
+              borderBottomLeftRadius: SIDEBAR_RADIUS,
+              borderBottomRightRadius: SIDEBAR_RADIUS,
+              position: "absolute",
+              bottom: 0,
+              left: 0,
+            }}
+          >
+            <Footer />
           </div>
         </div>
         {showingNewWsModal && <NewWorkspaceModal hideModal={hideNewWsModal} />}
+      </div>
+      <div
+        className={`transition-all duration-500 ${
+          showSidebar ? "ml-[310px] w-[calc(100vw-310px)]" : "ml-0 w-full"
+        }`}
+      >
+        {children}
       </div>
     </>
   );

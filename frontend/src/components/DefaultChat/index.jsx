@@ -28,6 +28,9 @@ import {
   GLASS_RADIUS,
 } from "@/theme/themeColors";
 
+const DARKER_GLASS_BG_LIGHT = "rgba(15, 23, 42, 0.85)"; // much darker slate
+const DARKER_GLASS_BG_DARK = "rgba(0,0,0,0.96)"; // almost black, very opaque
+
 export default function DefaultChatContainer({ isDark = true }) {
   const { getMessageAlignment } = useChatMessageAlignment();
   const { showScrollbar } = Appearance.getSettings();
@@ -214,7 +217,7 @@ export default function DefaultChatContainer({ isDark = true }) {
     <div
       style={{
         height: isMobile ? "100%" : "calc(100% - 32px)",
-        background: isDark ? GLASS_BG_DARK : GLASS_BG_LIGHT,
+        background: isDark ? DARKER_GLASS_BG_DARK : DARKER_GLASS_BG_LIGHT,
         border: GLASS_BORDER,
         boxShadow: GLASS_SHADOW,
         backdropFilter: GLASS_BLUR,

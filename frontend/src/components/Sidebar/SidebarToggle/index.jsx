@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { SidebarSimple } from "@phosphor-icons/react";
 import paths from "@/utils/paths";
 import { Tooltip } from "react-tooltip";
+
 const SIDEBAR_TOGGLE_STORAGE_KEY = "anythingllm_sidebar_toggle";
 
 /**
@@ -75,7 +76,15 @@ export function ToggleSidebarButton({ showSidebar, setShowSidebar }) {
     <>
       <button
         type="button"
-        className={`hidden md:block border-none bg-transparent outline-none ring-0 transition-left duration-500 ${showSidebar ? "left-[247px]" : "absolute top-[20px] left-[30px] z-10"}`}
+        className={`hidden md:flex items-center justify-center
+          fixed top-6 z-40
+          w-12 h-12 rounded-full
+          bg-transparent hover:bg-white/20
+          shadow-none  hover:border-white
+          transition-all duration-300
+          group
+          ${showSidebar ? "left-[326px]" : "left-6"}
+        `}
         onClick={() => setShowSidebar((prev) => !prev)}
         data-tooltip-id="sidebar-toggle"
         data-tooltip-content={
@@ -90,8 +99,11 @@ export function ToggleSidebarButton({ showSidebar, setShowSidebar }) {
         }
       >
         <SidebarSimple
-          className="text-theme-text-secondary hover:text-theme-text-primary"
-          size={24}
+          className={`transition-transform duration-1000
+            text-gray-300 group-hover:text-white
+            ${showSidebar ? "rotate-180" : ""}
+          `}
+          size={28}
         />
       </button>
       <Tooltip
@@ -103,3 +115,5 @@ export function ToggleSidebarButton({ showSidebar, setShowSidebar }) {
     </>
   );
 }
+
+

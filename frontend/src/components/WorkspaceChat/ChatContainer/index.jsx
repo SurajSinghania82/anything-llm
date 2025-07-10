@@ -20,8 +20,6 @@ import SpeechRecognition, {
 import { ChatTooltips } from "./ChatTooltips";
 import { MetricsProvider } from "./ChatHistory/HistoricalMessage/Actions/RenderMetrics";
 import {
-  GLASS_BG_LIGHT,
-  GLASS_BG_DARK,
   GLASS_BORDER,
   GLASS_SHADOW,
   GLASS_BLUR,
