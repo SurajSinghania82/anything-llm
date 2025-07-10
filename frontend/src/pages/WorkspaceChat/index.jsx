@@ -11,6 +11,7 @@ import {
   BG_GRADIENT_LIGHT,
   BG_GRADIENT_DARK,
 } from "@/theme/themeColors";
+import { useSidebarToggle, ToggleSidebarButton } from "@/components/Sidebar/SidebarToggle";
 
 export default function WorkspaceChat() {
   const { loading, requiresAuth, mode } = usePasswordModal();
@@ -28,7 +29,7 @@ function ShowWorkspaceChat({ isDark, setIsDark }) {
   const { slug } = useParams();
   const [workspace, setWorkspace] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [sidebarOpen, setSidebarOpen] = useState(true); // Sidebar open by default
+  const { showSidebar, setShowSidebar } = useSidebarToggle();
 
   useEffect(() => {
     async function getWorkspace() {
@@ -61,17 +62,30 @@ function ShowWorkspaceChat({ isDark, setIsDark }) {
       }}
     >
       {/* Orbs overlay */}
-      <OrbsBackground style={{ position: "absolute", inset: 0, zIndex: 0, pointerEvents: "none" }} />
+      <OrbsBackground style={{
+        position: "absolute", inset: 0, zIndex: 0, pointerEvents: "none"
+      }} />
+
+      {/* Toggle button always visible on desktop */}
+      {!isMobile && (
+        <ToggleSidebarButton showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
+      )}
 
       {/* Sidebar (desktop only) */}
-      {!isMobile && sidebarOpen && (
-        <div className="h-full flex-shrink-0 flex-grow-0 fixed left-0 top-0 z-20" style={{ width: 310, minWidth: 310, maxWidth: 310, height: '100vh' }}>
+      {!isMobile && showSidebar && (
+        <div
+          className="h-full flex-shrink-0 flex-grow-0 fixed left-0 top-0 z-20"
+          style={{ width: 310, minWidth: 310, maxWidth: 310, height: '100vh' }}
+        >
           <Sidebar />
         </div>
       )}
+
       {/* Main content shifts when sidebar is open */}
       <div
-        className={`flex flex-col w-full h-full relative transition-all duration-500 ${!isMobile && sidebarOpen ? 'ml-[310px]' : ''}`}
+        className={`flex flex-col w-full h-full relative transition-all duration-500 ${
+          !isMobile && showSidebar ? 'ml-[310px]' : ''
+        }`}
         style={{ zIndex: 1 }}
       >
         <WorkspaceChatContainer loading={loading} workspace={workspace} />
