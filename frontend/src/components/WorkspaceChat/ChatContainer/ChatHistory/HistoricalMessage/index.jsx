@@ -16,6 +16,15 @@ import {
   THOUGHT_REGEX_OPEN,
   ThoughtChainComponent,
 } from "../ThoughtContainer";
+import {
+  GLASS_BORDER,
+  GLASS_SHADOW,
+  GLASS_BLUR,
+  GLASS_RADIUS,
+} from "@/theme/themeColors";
+
+const DARKER_GLASS_BG_LIGHT = "rgba(30, 41, 59, 0.55)";
+const DARKER_GLASS_BG_DARK = "rgba(0,0,0,0.70)";
 
 const HistoricalMessage = ({
   uuid = v4(),
@@ -33,6 +42,7 @@ const HistoricalMessage = ({
   forkThread,
   metrics = {},
   alignmentCls = "",
+  isDark = true, // <-- add this
 }) => {
   const { isEditing } = useEditMessage({ chatId, role });
   const { isDeleted, completeDelete, onEndAnimation } = useWatchDeleteMessage({
@@ -45,11 +55,15 @@ const HistoricalMessage = ({
     element.style.height = element.scrollHeight + "px";
   };
 
+  // For error message
   if (!!error) {
     return (
       <div
         key={uuid}
-        className={`flex justify-center items-end w-full bg-theme-bg-chat`}
+        style={{
+          transition: "background 0.5s, box-shadow 0.5s, border 0.5s",
+        }}
+        className="flex justify-center items-end w-full"
       >
         <div className="py-8 px-4 w-full flex gap-x-5 md:max-w-[80%] flex-col">
           <div className={`flex gap-x-5 ${alignmentCls}`}>
@@ -71,13 +85,17 @@ const HistoricalMessage = ({
 
   if (completeDelete) return null;
 
+  // For normal message
   return (
     <div
       key={uuid}
       onAnimationEnd={onEndAnimation}
+      style={{
+        transition: "background 0.5s, box-shadow 0.5s, border 0.5s",
+      }}
       className={`${
         isDeleted ? "animate-remove" : ""
-      } flex justify-center items-end w-full group bg-theme-bg-chat`}
+      } flex justify-center items-end w-full group`}
     >
       <div className="py-8 px-4 w-full flex gap-x-5 md:max-w-[80%] flex-col">
         <div className={`flex gap-x-5 ${alignmentCls}`}>

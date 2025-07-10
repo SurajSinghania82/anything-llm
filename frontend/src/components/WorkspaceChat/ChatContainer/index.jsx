@@ -19,8 +19,16 @@ import SpeechRecognition, {
 } from "react-speech-recognition";
 import { ChatTooltips } from "./ChatTooltips";
 import { MetricsProvider } from "./ChatHistory/HistoricalMessage/Actions/RenderMetrics";
+import {
+  GLASS_BG_LIGHT,
+  GLASS_BG_DARK,
+  GLASS_BORDER,
+  GLASS_SHADOW,
+  GLASS_BLUR,
+  GLASS_RADIUS,
+} from "@/theme/themeColors";
 
-export default function ChatContainer({ workspace, knownHistory = [] }) {
+export default function ChatContainer({ workspace, knownHistory = [], isDark = true }) {
   const { threadSlug = null } = useParams();
   const [message, setMessage] = useState("");
   const [loadingResponse, setLoadingResponse] = useState(false);
@@ -270,10 +278,22 @@ export default function ChatContainer({ workspace, knownHistory = [] }) {
     handleWSS();
   }, [socketId]);
 
+  // Choose a more opaque/darker glass background for both themes
+  const DARKER_GLASS_BG_LIGHT = "rgba(30, 41, 59, 0.55)"; // Tailwind slate-800 with more opacity
+  const DARKER_GLASS_BG_DARK = "rgba(0,0,0,0.65)";
+
   return (
     <div
-      style={{ height: isMobile ? "100%" : "calc(100% - 32px)" }}
-      className="transition-all duration-500 relative md:ml-[2px] md:mr-[16px] md:my-[16px] md:rounded-[16px] bg-theme-bg-secondary w-full h-full overflow-y-scroll no-scroll z-[2]"
+      style={{
+        height: isMobile ? "100%" : "calc(100% - 32px)",
+        background: isDark ? DARKER_GLASS_BG_DARK : DARKER_GLASS_BG_LIGHT,
+        border: GLASS_BORDER,
+        boxShadow: GLASS_SHADOW,
+        backdropFilter: GLASS_BLUR,
+        borderRadius: GLASS_RADIUS,
+        transition: "background 0.5s, box-shadow 0.5s, border 0.5s",
+      }}
+      className="transition-all duration-500 relative md:ml-[2px] md:mr-[16px] md:my-[16px] md:rounded-[16px] w-full h-full overflow-y-scroll no-scroll z-[2]"
     >
       {isMobile && <SidebarMobileHeader />}
       <DnDFileUploaderWrapper>

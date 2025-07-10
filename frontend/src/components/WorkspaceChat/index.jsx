@@ -11,7 +11,7 @@ import {
   useWatchForAutoPlayAssistantTTSResponse,
 } from "../contexts/TTSProvider";
 
-export default function WorkspaceChat({ loading, workspace }) {
+export default function WorkspaceChat({ loading, workspace, isDark }) {
   useWatchForAutoPlayAssistantTTSResponse();
   const { threadSlug = null } = useParams();
   const [history, setHistory] = useState([]);
@@ -71,7 +71,7 @@ export default function WorkspaceChat({ loading, workspace }) {
   return (
     <TTSProvider>
       <DnDFileUploaderProvider workspace={workspace}>
-        <ChatContainer workspace={workspace} knownHistory={history} />
+        <ChatContainer workspace={workspace} knownHistory={history} isDark={isDark} />
       </DnDFileUploaderProvider>
     </TTSProvider>
   );

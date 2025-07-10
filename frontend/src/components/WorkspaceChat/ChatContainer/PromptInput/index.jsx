@@ -154,7 +154,7 @@ export default function PromptInput({
       redoStack.current.push({
         value: promptInput,
         cursorPositionStart: textareaRef.current.selectionStart,
-        cursorPositionEnd: textareaRef.current.selectionEnd,
+        cursorPositionEnd: textareaRef
       });
       setPromptInput(lastState.value);
       setTimeout(() => {
@@ -247,10 +247,10 @@ export default function PromptInput({
       />
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col gap-y-1 rounded-t-lg md:w-3/4 w-full mx-auto max-w-xl items-center"
+        className="flex flex-col gap-y-1 rounded-t-lg md:w-3/4 w-full mx-auto max-w-3xl items-center"
       >
         <div className="flex items-center rounded-lg md:mb-4">
-          <div className="w-[95vw] md:w-[635px] bg-theme-bg-chat-input light:bg-white light:border-solid light:border-[1px] light:border-theme-chat-input-border shadow-sm rounded-2xl flex flex-col px-4 overflow-hidden">
+          <div className="w-[99vw] md:w-[900px] bg-theme-bg-chat-input light:bg-white light:border-solid light:border-[1px] light:border-theme-chat-input-border shadow-sm rounded-2xl flex flex-col px-4 overflow-hidden">
             <AttachmentManager attachments={attachments} />
             <div className="flex items-center w-full border-b-2 border-theme-chat-input-border">
               <textarea
@@ -268,8 +268,12 @@ export default function PromptInput({
                   adjustTextArea(e);
                 }}
                 value={promptInput}
-                className={`border-none cursor-text max-h-[50vh] md:max-h-[350px] md:min-h-[40px] mx-2 md:mx-0 pt-[12px] w-full leading-5 md:text-md text-white bg-transparent placeholder:text-white/60 light:placeholder:text-theme-text-primary resize-none active:outline-none focus:outline-none flex-grow ${textSizeClass}`}
+                className={`border-none cursor-text max-h-[120px] md:max-h-[120px] md:min-h-[32px] mx-2 md:mx-0 pt-[8px] pb-[8px] w-full leading-5 md:text-md text-white bg-transparent placeholder:text-white/60 light:placeholder:text-theme-text-primary resize-none active:outline-none focus:outline-none flex-grow ${textSizeClass}`}
                 placeholder={t("chat_window.send_message")}
+                style={{
+                  minHeight: "32px",
+                  maxHeight: "120px",
+                }}
               />
               {isStreaming ? (
                 <StopGenerationButton />
@@ -299,7 +303,7 @@ export default function PromptInput({
                 </>
               )}
             </div>
-            <div className="flex justify-between py-3.5">
+            <div className="flex justify-between py-2">
               <div className="flex gap-x-2">
                 <AttachItem />
                 <SlashCommandsButton

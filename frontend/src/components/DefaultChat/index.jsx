@@ -19,8 +19,16 @@ import useUser from "@/hooks/useUser";
 import { useTranslation, Trans } from "react-i18next";
 import Appearance from "@/models/appearance";
 import { useChatMessageAlignment } from "@/hooks/useChatMessageAlignment";
+import {
+  GLASS_BG_LIGHT,
+  GLASS_BG_DARK,
+  GLASS_BORDER,
+  GLASS_SHADOW,
+  GLASS_BLUR,
+  GLASS_RADIUS,
+} from "@/theme/themeColors";
 
-export default function DefaultChatContainer() {
+export default function DefaultChatContainer({ isDark = true }) {
   const { getMessageAlignment } = useChatMessageAlignment();
   const { showScrollbar } = Appearance.getSettings();
   const [mockMsgs, setMockMessages] = useState([]);
@@ -204,8 +212,16 @@ export default function DefaultChatContainer() {
 
   return (
     <div
-      style={{ height: isMobile ? "100%" : "calc(100% - 32px)" }}
-      className={`transition-all duration-500 relative md:ml-[2px] md:mr-[16px] md:my-[16px] md:rounded-[16px] bg-theme-bg-secondary light:border-[1px] light:border-theme-sidebar-border w-full h-full overflow-y-scroll ${
+      style={{
+        height: isMobile ? "100%" : "calc(100% - 32px)",
+        background: isDark ? GLASS_BG_DARK : GLASS_BG_LIGHT,
+        border: GLASS_BORDER,
+        boxShadow: GLASS_SHADOW,
+        backdropFilter: GLASS_BLUR,
+        borderRadius: GLASS_RADIUS,
+        transition: "background 0.5s, box-shadow 0.5s, border 0.5s",
+      }}
+      className={`transition-all duration-500 relative md:ml-[2px] md:mr-[16px] md:my-[16px] w-full h-full overflow-y-scroll ${
         showScrollbar ? "show-scrollbar" : "no-scroll"
       }`}
     >

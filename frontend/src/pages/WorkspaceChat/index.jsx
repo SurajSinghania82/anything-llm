@@ -62,27 +62,6 @@ function ShowWorkspaceChat({ isDark, setIsDark }) {
       {/* Orbs overlay */}
       <OrbsBackground style={{ position: "absolute", inset: 0, zIndex: 0, pointerEvents: "none" }} />
 
-      {/* Theme switch button */}
-      <button
-        onClick={() => setIsDark((d) => !d)}
-        style={{
-          position: "absolute",
-          top: 20,
-          right: 20,
-          zIndex: 10,
-          background: "rgba(0,0,0,0.3)",
-          color: "#fff",
-          border: "none",
-          borderRadius: "50%",
-          width: 40,
-          height: 40,
-          cursor: "pointer",
-        }}
-        aria-label="Toggle theme"
-      >
-        {isDark ? "🌙" : "☀️"}
-      </button>
-
       <div className="relative flex-1 flex" style={{ zIndex: 1 }}>
         {!isMobile && <Sidebar />}
         <WorkspaceChatContainer loading={loading} workspace={workspace} />
