@@ -71,25 +71,37 @@ function ShowWorkspaceChat({ isDark, setIsDark }) {
         <ToggleSidebarButton showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
       )}
 
-      {/* Sidebar (desktop only) */}
-      {!isMobile && showSidebar && (
-        <div
-          className="h-full flex-shrink-0 flex-grow-0 fixed left-0 top-0 z-20"
-          style={{ width: 310, minWidth: 310, maxWidth: 310, height: '100vh' }}
-        >
-          <Sidebar />
+      {/* Desktop: Sidebar and content as siblings in a flex row */}
+      {!isMobile ? (
+        <div className="flex w-full h-full">
+          {/* Sidebar */}
+          <div
+            className={`transition-all duration-500 h-full ${
+              showSidebar ? "w-[310px] min-w-[310px]" : "w-0 min-w-0"
+            } overflow-hidden`}
+            style={{ zIndex: 20 }}
+          >
+            <Sidebar />
+          </div>
+          {/* Main content */}
+          <div className="flex-1 h-full flex flex-col relative" style={{ zIndex: 1 }}>
+            <WorkspaceChatContainer loading={loading} workspace={workspace} />
+          </div>
+        </div>
+      ) : (
+        // Mobile: content fills screen
+        <div className="flex-1 w-full h-full flex flex-col relative" style={{ zIndex: 1 }}>
+          <WorkspaceChatContainer loading={loading} workspace={workspace} />
         </div>
       )}
 
-      {/* Main content shifts when sidebar is open */}
-      <div
-        className={`flex flex-col w-full h-full relative transition-all duration-500 ${
-          !isMobile && showSidebar ? 'ml-[310px]' : ''
-        }`}
-        style={{ zIndex: 1 }}
-      >
-        <WorkspaceChatContainer loading={loading} workspace={workspace} />
-      </div>
+      {/* Overlay to close sidebar when clicking outside */}
+      {!isMobile && showSidebar && (
+        <div
+          className="fixed inset-0 bg-black/40 z-10 transition-opacity duration-300"
+          onClick={() => setShowSidebar(false)}
+        />
+      )}
     </div>
   );
 }

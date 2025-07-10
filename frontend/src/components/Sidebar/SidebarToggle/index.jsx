@@ -80,7 +80,6 @@ export function ToggleSidebarButton({ showSidebar, setShowSidebar }) {
           fixed top-6 z-40
           w-12 h-12 rounded-full
           bg-transparent hover:bg-white/20
-          shadow-none  hover:border-white
           transition-all duration-300
           group
           ${showSidebar ? "left-[326px]" : "left-6"}
@@ -99,7 +98,7 @@ export function ToggleSidebarButton({ showSidebar, setShowSidebar }) {
         }
       >
         <SidebarSimple
-          className={`transition-transform duration-1000
+          className={`transition-transform duration-300
             text-gray-300 group-hover:text-white
             ${showSidebar ? "rotate-180" : ""}
           `}
