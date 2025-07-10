@@ -1,16 +1,29 @@
-import React, { createContext, useContext } from "react";
-import { useTheme } from "./hooks/useTheme";
+// ThemeContext.jsx
+import React, { createContext, useContext, useState } from "react";
 
+// Create the context
 const ThemeContext = createContext();
 
-export function ThemeProvider({ children }) {
-  const themeValue = useTheme();
+// Theme provider component
+export const ThemeProvider = ({ children }) => {
+  const [theme, setTheme] = useState("dark"); // or "light"
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+  };
 
   return (
-    <ThemeContext.Provider value={themeValue}>{children}</ThemeContext.Provider>
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      {children}
+    </ThemeContext.Provider>
   );
-}
+};
 
-export function useThemeContext() {
-  return useContext(ThemeContext);
-}
+// ✅ THIS is what you're missing or need to ensure
+export const useTheme = () => {
+  const context = useContext(ThemeContext);
+  if (!context) {
+    throw new Error("useTheme must be used within a ThemeProvider");
+  }
+  return context;
+};

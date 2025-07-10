@@ -6,19 +6,25 @@ import Workspace from "@/models/workspace";
 import PasswordModal, { usePasswordModal } from "@/components/Modals/Password";
 import { isMobile } from "react-device-detect";
 import { FullScreenLoader } from "@/components/Preloader";
+import OrbsBackground from "@/components/OrbsBackground";
+import {
+  BG_GRADIENT_LIGHT,
+  BG_GRADIENT_DARK,
+} from "@/theme/themeColors";
 
 export default function WorkspaceChat() {
   const { loading, requiresAuth, mode } = usePasswordModal();
+  const [isDark, setIsDark] = useState(true);
 
   if (loading) return <FullScreenLoader />;
   if (requiresAuth !== false) {
     return <>{requiresAuth !== null && <PasswordModal mode={mode} />}</>;
   }
 
-  return <ShowWorkspaceChat />;
+  return <ShowWorkspaceChat isDark={isDark} setIsDark={setIsDark} />;
 }
 
-function ShowWorkspaceChat() {
+function ShowWorkspaceChat({ isDark, setIsDark }) {
   const { slug } = useParams();
   const [workspace, setWorkspace] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -41,14 +47,46 @@ function ShowWorkspaceChat() {
       setLoading(false);
     }
     getWorkspace();
-  }, []);
+  }, [slug]);
+
+  const background = isDark ? BG_GRADIENT_DARK : BG_GRADIENT_LIGHT;
 
   return (
-    <>
-      <div className="w-screen h-screen overflow-hidden bg-theme-bg-container flex">
+    <div
+      className="w-screen h-screen overflow-hidden flex relative"
+      style={{
+        background,
+        transition: "background 0.5s",
+      }}
+    >
+      {/* Orbs overlay */}
+      <OrbsBackground style={{ position: "absolute", inset: 0, zIndex: 0, pointerEvents: "none" }} />
+
+      {/* Theme switch button */}
+      <button
+        onClick={() => setIsDark((d) => !d)}
+        style={{
+          position: "absolute",
+          top: 20,
+          right: 20,
+          zIndex: 10,
+          background: "rgba(0,0,0,0.3)",
+          color: "#fff",
+          border: "none",
+          borderRadius: "50%",
+          width: 40,
+          height: 40,
+          cursor: "pointer",
+        }}
+        aria-label="Toggle theme"
+      >
+        {isDark ? "🌙" : "☀️"}
+      </button>
+
+      <div className="relative flex-1 flex" style={{ zIndex: 1 }}>
         {!isMobile && <Sidebar />}
         <WorkspaceChatContainer loading={loading} workspace={workspace} />
       </div>
-    </>
+    </div>
   );
 }
