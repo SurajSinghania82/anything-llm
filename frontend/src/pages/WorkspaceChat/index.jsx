@@ -66,41 +66,26 @@ function ShowWorkspaceChat({ isDark, setIsDark }) {
         position: "absolute", inset: 0, zIndex: 0, pointerEvents: "none"
       }} />
 
-      {/* Toggle button always visible on desktop */}
-      {!isMobile && (
-        <ToggleSidebarButton showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
-      )}
-
-      {/* Desktop: Sidebar and content as siblings in a flex row */}
-      {!isMobile ? (
-        <div className="flex w-full h-full">
-          {/* Sidebar */}
-          <div
-            className={`transition-all duration-500 h-full ${
-              showSidebar ? "w-[310px] min-w-[310px]" : "w-0 min-w-0"
-            } overflow-hidden`}
-            style={{ zIndex: 20 }}
-          >
-            <Sidebar />
-          </div>
-          {/* Main content */}
-          <div className="flex-1 h-full flex flex-col relative" style={{ zIndex: 1 }}>
-            <WorkspaceChatContainer loading={loading} workspace={workspace} />
-          </div>
-        </div>
-      ) : (
-        // Mobile: content fills screen
-        <div className="flex-1 w-full h-full flex flex-col relative" style={{ zIndex: 1 }}>
-          <WorkspaceChatContainer loading={loading} workspace={workspace} />
-        </div>
-      )}
-
-      {/* Overlay to close sidebar when clicking outside */}
+      {/* Overlay when sidebar is open */}
       {!isMobile && showSidebar && (
         <div
           className="fixed inset-0 bg-black/40 z-10 transition-opacity duration-300"
           onClick={() => setShowSidebar(false)}
         />
+      )}
+
+      {/* Desktop: Sidebar wraps content */}
+      {!isMobile ? (
+        <Sidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar}>
+          <div className="flex-1 h-full flex flex-col relative" style={{ zIndex: 1 }}>
+            <WorkspaceChatContainer loading={loading} workspace={workspace} />
+          </div>
+        </Sidebar>
+      ) : (
+        // Mobile: content fills screen
+        <div className="flex-1 w-full h-full flex flex-col relative" style={{ zIndex: 1 }}>
+          <WorkspaceChatContainer loading={loading} workspace={workspace} />
+        </div>
       )}
     </div>
   );
