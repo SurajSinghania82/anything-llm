@@ -22,28 +22,25 @@ import showToast from "@/utils/toast";
 import System from "@/models/system";
 import Option from "./MenuOption";
 import { CanViewChatHistoryProvider } from "../CanViewChatHistory";
+import { useSidebarToggle, ToggleSidebarButton } from "@/components/Sidebar/SidebarToggle";
 
-export default function SettingsSidebar() {
+export default function SettingsSidebar({ children }) {
   const { t } = useTranslation();
   const { logo } = useLogo();
   const { user } = useUser();
   const sidebarRef = useRef(null);
-  const [showSidebar, setShowSidebar] = useState(false);
   const [showBgOverlay, setShowBgOverlay] = useState(false);
+  const { showSidebar, setShowSidebar } = useSidebarToggle();
 
   useEffect(() => {
-    function handleBg() {
-      if (showSidebar) {
-        setTimeout(() => {
-          setShowBgOverlay(true);
-        }, 300);
-      } else {
-        setShowBgOverlay(false);
-      }
+    if (showSidebar) {
+      setTimeout(() => setShowBgOverlay(true), 300);
+    } else {
+      setShowBgOverlay(false);
     }
-    handleBg();
   }, [showSidebar]);
 
+  // --- Mobile Sidebar (unchanged) ---
   if (isMobile) {
     return (
       <>
@@ -132,53 +129,61 @@ export default function SettingsSidebar() {
     );
   }
 
+  // --- Desktop Dynamic Sidebar ---
   return (
-    <>
-      <div>
-        <Link
-          to={paths.home()}
-          className="flex shrink-0 max-w-[55%] items-center justify-start mx-[38px] my-[18px]"
-        >
-          <img
-            src={logo}
-            alt="Logo"
-            className="rounded max-h-[24px]"
-            style={{ objectFit: "contain" }}
-          />
-        </Link>
+    <div className="flex w-full h-full">
+      {/* Toggle button always visible on desktop */}
+      <ToggleSidebarButton showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
+
+      {/* Overlay when sidebar is open */}
+      {showSidebar && (
         <div
-          ref={sidebarRef}
-          className="transition-all duration-500 relative m-[16px] rounded-[16px] bg-theme-bg-sidebar border-[2px] border-theme-sidebar-border light:border-none min-w-[250px] p-[10px] h-[calc(100%-76px)]"
-        >
-          <div className="w-full h-full flex flex-col overflow-x-hidden items-between min-w-[235px]">
-            <div className="text-theme-text-secondary text-sm font-medium uppercase mt-[4px] mb-0 ml-2">
-              {t("settings.title")}
-            </div>
-            <div className="relative h-[calc(100%-60px)] flex flex-col w-full justify-between pt-[10px] overflow-y-scroll no-scroll">
-              <div className="h-auto sidebar-items">
-                <div className="flex flex-col gap-y-2 pb-[60px] overflow-y-scroll no-scroll">
-                  <SidebarOptions user={user} t={t} />
-                  <div className="h-[1.5px] bg-[#3D4147] mx-3 mt-[14px]" />
-                  <SupportEmail />
-                  <Link
-                    hidden={
-                      user?.hasOwnProperty("role") && user.role !== "admin"
-                    }
-                    to={paths.settings.privacy()}
-                    className="text-theme-text-secondary hover:text-white hover:light:text-theme-text-primary text-xs leading-[18px] mx-3"
-                  >
-                    {t("settings.privacy")}
-                  </Link>
-                </div>
+          className="fixed inset-0 bg-black/40 z-10 transition-opacity duration-300"
+          onClick={() => setShowSidebar(false)}
+        />
+      )}
+
+      {/* Sidebar */}
+      <div
+        ref={sidebarRef}
+        className={`transition-all duration-500 relative m-[16px] rounded-[16px] bg-theme-bg-sidebar border-[2px] border-theme-sidebar-border light:border-none min-w-[250px] p-[10px] h-[calc(100%-76px)] ${
+          showSidebar ? "w-[310px] min-w-[250px]" : "w-0 min-w-0 overflow-hidden"
+        }`}
+        style={{ zIndex: 20 }}
+      >
+        <div className="w-full h-full flex flex-col overflow-x-hidden items-between min-w-[235px]">
+          <div className="text-theme-text-secondary text-sm font-medium uppercase mt-[4px] mb-0 ml-2">
+            {t("settings.title")}
+          </div>
+          <div className="relative h-[calc(100%-60px)] flex flex-col w-full justify-between pt-[10px] overflow-y-scroll no-scroll">
+            <div className="h-auto sidebar-items">
+              <div className="flex flex-col gap-y-2 pb-[60px] overflow-y-scroll no-scroll">
+                <SidebarOptions user={user} t={t} />
+                <div className="h-[1.5px] bg-[#3D4147] mx-3 mt-[14px]" />
+                <SupportEmail />
+                <Link
+                  hidden={
+                    user?.hasOwnProperty("role") && user.role !== "admin"
+                  }
+                  to={paths.settings.privacy()}
+                  className="text-theme-text-secondary hover:text-white hover:light:text-theme-text-primary text-xs leading-[18px] mx-3"
+                >
+                  {t("settings.privacy")}
+                </Link>
               </div>
             </div>
-            <div className="absolute bottom-0 left-0 right-0 pt-4 pb-3 rounded-b-[16px] bg-theme-bg-sidebar bg-opacity-80 backdrop-filter backdrop-blur-md z-10">
-              <Footer />
-            </div>
+          </div>
+          <div className="absolute bottom-0 left-0 right-0 pt-4 pb-3 rounded-b-[16px] bg-theme-bg-sidebar bg-opacity-80 backdrop-filter backdrop-blur-md z-10">
+            <Footer />
           </div>
         </div>
       </div>
-    </>
+
+      {/* Main content shifts when sidebar is open */}
+      <div className="flex-1 h-full flex flex-col relative transition-all duration-500" style={{ zIndex: 1 }}>
+        {children}
+      </div>
+    </div>
   );
 }
 
