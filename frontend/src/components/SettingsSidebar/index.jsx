@@ -41,7 +41,7 @@ export default function SettingsSidebar({ children }) {
   }, [showSidebar]);
 
   return (
-    <div className="flex w-full h-full">
+    <div className="flex w-auto h-full">
       {/* Sidebar */}
       <aside
         ref={sidebarRef}
@@ -51,7 +51,6 @@ export default function SettingsSidebar({ children }) {
         style={{ zIndex: 20 }}
         aria-label="Settings sidebar"
       >
-        {/* Toggle Button */}
         <button
           className="absolute top-4 right-[-20px] bg-theme-action-menu-bg rounded-full p-2 shadow hover:bg-theme-action-menu-item-hover transition"
           onClick={() => setShowSidebar(!showSidebar)}
@@ -59,7 +58,6 @@ export default function SettingsSidebar({ children }) {
         >
           <List className="h-6 w-6" />
         </button>
-        {/* Sidebar Content fills all available space, including footer */}
         <SidebarContent user={user} t={t} expanded={showSidebar} />
       </aside>
     </div>
