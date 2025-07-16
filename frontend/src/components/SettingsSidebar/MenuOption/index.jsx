@@ -34,7 +34,7 @@ export default function MenuOption({
       return (
         <Link
           to={href}
-          className="flex justify-center items-center w-full h-12 my-1"
+          className="flex justify-center items-center w-full h-12 my-3"
           tabIndex={0}
           aria-label={btnText}
           style={{
@@ -43,8 +43,8 @@ export default function MenuOption({
           }}
         >
           {React.cloneElement(icon, {
-            className: "h-6 w-6 text-white dark:text-theme-text-primary mx-auto",
-            style: { display: "block" }
+            className: "h-6 w-6 text-white dark:text-theme-text-primary",
+            style: { display: "block", margin: "auto" }
           })}
         </Link>
       );
@@ -52,7 +52,7 @@ export default function MenuOption({
     // If has children, make icon a button to expand sidebar
     return (
       <button
-        className="flex justify-center items-center w-full h-12 my-1"
+        className="flex flex-col justify-center align-items-center w-full h-12 "
         tabIndex={0}
         aria-label={`Expand ${btnText}`}
         style={{
@@ -66,8 +66,8 @@ export default function MenuOption({
         }}
       >
         {React.cloneElement(icon, {
-          className: "h-6 w-6 text-white dark:text-theme-text-primary mx-auto",
-          style: { display: "block" }
+          className: "h-6 w-6 text-white dark:text-theme-text-primary",
+          style: { display: "block", margin: "auto" }
         })}
       </button>
     );

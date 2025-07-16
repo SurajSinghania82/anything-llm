@@ -45,7 +45,7 @@ export default function SettingsSidebar({ children }) {
       {/* Sidebar */}
       <aside
         ref={sidebarRef}
-        className={`transition-all duration-500 relative m-4 rounded-2xl bg-theme-bg-sidebar border border-theme-sidebar-border shadow-lg flex flex-col
+        className={`transition-all duration-500 relative m-4 rounded-2xl bg-theme-bg-sidebar border border-theme-sidebar-border shadow-lg flex flex-col h-full
           ${showSidebar ? "w-[320px] min-w-[260px] p-6" : "w-[64px] min-w-[64px] p-2 items-center"}
         `}
         style={{ zIndex: 20 }}
@@ -59,45 +59,36 @@ export default function SettingsSidebar({ children }) {
         >
           <List className="h-6 w-6" />
         </button>
-        {/* Sidebar Content */}
+        {/* Sidebar Content fills all available space, including footer */}
         <SidebarContent user={user} t={t} expanded={showSidebar} />
-        {showSidebar && (
-          <div className="absolute bottom-0 left-0 right-0 pt-4 pb-3 rounded-b-2xl bg-theme-bg-sidebar bg-opacity-80 backdrop-blur z-10">
-            <Footer />
-          </div>
-        )}
       </aside>
-      {/* Overlay when expanded */}
-      {showSidebar && (
-        <div
-          className="fixed inset-0 bg-black/30 backdrop-blur-sm z-10"
-          onClick={() => setShowSidebar(false)}
-          aria-label="Close settings"
-        />
-      )}
-      {/* Main Content */}
-      <main className="flex-1 h-full flex flex-col relative transition-all duration-500" style={{ zIndex: 1 }}>
-        {children}
-      </main>
     </div>
   );
 }
 
 function SidebarContent({ user, t, expanded }) {
   return (
-    <nav className={`flex flex-col gap-6 ${expanded ? "" : "items-center"}`} aria-label="Settings navigation">
+    <nav className={`flex-1 flex flex-col h-full w-full ${expanded ? "" : "items-center"}`} aria-label="Settings navigation">
+      {/* Top section: logo and title */}
       {expanded && (
-        <div className="flex items-center gap-3 mb-2">
-          <img src={useLogo().logo} alt="Logo" className="h-8 rounded" />
-          <span className="text-lg font-semibold text-theme-text-secondary">{t("settings.title")}</span>
+        <div className="flex items-center gap-3 mb-2 pb-4">
+          <Link to="/" aria-label="Go to homepage">
+            <img src={useLogo().logo} alt="Logo" className="h-8 rounded cursor-pointer" />
+          </Link>
         </div>
       )}
-      <div className={`flex flex-col gap-4 ${expanded ? "" : "items-center"}`}>
+      {/* Middle section: options */}
+      <div className={`flex-1 flex flex-col gap-4 w-full ${expanded ? "" : "items-center"} overflow-y-auto`}>
         <SidebarOptions user={user} t={t} expanded={expanded} />
-        {expanded && (
-          <>
-            <div className="border-t border-theme-sidebar-border my-2" />
+      </div>
+      {/* Bottom section: support, privacy, and footer */}
+      {expanded && (
+        <div className="mt-auto pt-4 flex flex-col gap-3">
+          <div className="flex justify-center px-3">
             <SupportEmail />
+          </div>
+          <div className="border-t border-theme-sidebar-border my-2" />
+          <div className="flex flex-col gap-2 px-3">
             <Link
               hidden={user?.role !== "admin"}
               to={paths.settings.privacy()}
@@ -105,9 +96,12 @@ function SidebarContent({ user, t, expanded }) {
             >
               {t("settings.privacy")}
             </Link>
-          </>
-        )}
-      </div>
+          </div>
+          <div className="px-3 pb-2">
+            <Footer />
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
@@ -131,7 +125,8 @@ function SupportEmail() {
   return (
     <Link
       to={supportEmail}
-      className="text-theme-text-secondary hover:text-white hover:light:text-theme-text-primary text-xs leading-[18px] mx-3 mt-1"
+      className="text-theme-text-secondary hover:text-white hover:light:text-theme-text-primary text-xs leading-[18px]"
+      style={{ wordBreak: "break-all" }}
     >
       {t("settings.contact")}
     </Link>
