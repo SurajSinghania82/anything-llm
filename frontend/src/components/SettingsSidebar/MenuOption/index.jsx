@@ -12,6 +12,7 @@ export default function MenuOption({
   roles = [],
   hidden = false,
   isChild = false,
+  expanded = true, // <-- add this prop, default true for backward compatibility
 }) {
   const storageKey = generateStorageKey({ key: btnText });
   const location = useLocation();
@@ -25,6 +26,52 @@ export default function MenuOption({
   });
 
   if (hidden) return null;
+
+  // If sidebar is collapsed, show only icon
+  if (!expanded) {
+    // If no children, make icon a link
+    if (!hasChildren) {
+      return (
+        <Link
+          to={href}
+          className="flex justify-center items-center w-full h-12 my-1"
+          tabIndex={0}
+          aria-label={btnText}
+          style={{
+            minHeight: "48px",
+            minWidth: "48px",
+          }}
+        >
+          {React.cloneElement(icon, {
+            className: "h-6 w-6 text-white dark:text-theme-text-primary mx-auto",
+            style: { display: "block" }
+          })}
+        </Link>
+      );
+    }
+    // If has children, make icon a button to expand sidebar
+    return (
+      <button
+        className="flex justify-center items-center w-full h-12 my-1"
+        tabIndex={0}
+        aria-label={`Expand ${btnText}`}
+        style={{
+          minHeight: "48px",
+          minWidth: "48px",
+        }}
+        onClick={() => {
+          if (typeof window !== "undefined") {
+            window.dispatchEvent(new CustomEvent("expandSidebar"));
+          }
+        }}
+      >
+        {React.cloneElement(icon, {
+          className: "h-6 w-6 text-white dark:text-theme-text-primary mx-auto",
+          style: { display: "block" }
+        })}
+      </button>
+    );
+  }
 
   // If this option is a parent level option
   if (!isChild) {
@@ -96,7 +143,6 @@ export default function MenuOption({
             <CaretRight
               size={16}
               weight="bold"
-              // color={isExpanded ? "#000000" : "var(--theme-sidebar-subitem-icon)"}
               className={`transition-transform text-white light:text-black ${
                 isExpanded ? "rotate-90" : ""
               }`}
@@ -109,9 +155,10 @@ export default function MenuOption({
           {childOptions.map((childOption, index) => (
             <MenuOption
               key={index}
-              {...childOption} // flex and roles go here.
+              {...childOption}
               user={user}
               isChild={true}
+              expanded={expanded}
             />
           ))}
         </div>
