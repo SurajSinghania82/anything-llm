@@ -95,6 +95,9 @@ export default function Sidebar({ children }) {
             alignItems: "center",
             overflow: "hidden",
             position: "relative",
+            borderRight: isLight
+              ? "2px solid rgba(200,200,200,0.35)" // <-- Light border for light mode
+              : "2px solid rgba(255,255,255,0.08)", // <-- Subtle border for dark mode
           }}
         >
           {/* Logo and toggle */}

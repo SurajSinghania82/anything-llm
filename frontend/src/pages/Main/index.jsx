@@ -12,12 +12,11 @@ import {
   BG_GRADIENT_DARK,
 } from "@/theme/themeColors";
 import { useSidebarToggle } from "@/components/Sidebar/SidebarToggle";
+import { useTheme } from "@/hooks/useTheme"; // Add this import
 
 export default function Main() {
   const { loading, requiresAuth, mode } = usePasswordModal();
-  const [isDark, setIsDark] = useState(true);
-
-  // Enable sidebar toggle globally
+  const { theme } = useTheme(); // Use theme hook
   const { showSidebar, setShowSidebar } = useSidebarToggle();
 
   if (loading) return <FullScreenLoader />;
@@ -25,7 +24,8 @@ export default function Main() {
     return <>{requiresAuth !== null && <PasswordModal mode={mode} />}</>;
 
   const user = userFromStorage();
-  const background = isDark ? BG_GRADIENT_DARK : BG_GRADIENT_LIGHT;
+  const background =
+    theme === "light" ? BG_GRADIENT_LIGHT : BG_GRADIENT_DARK;
 
   return (
     <div
@@ -38,10 +38,12 @@ export default function Main() {
       {/* Orbs overlay */}
       <OrbsBackground style={{ position: "absolute", inset: 0, zIndex: 0, pointerEvents: "none" }} />
 
-      {/* Overlay when sidebar is open (optional, for focus effect) */}
+      {/* Overlay when sidebar is open */}
       {!isMobile && showSidebar && (
         <div
-          className="fixed inset-0 bg-black/40 z-10 transition-opacity duration-300"
+          className={`fixed inset-0 z-10 transition-opacity duration-300 ${
+            theme === "light" ? "bg-slate-200/60" : "bg-black/40"
+          }`}
           onClick={() => setShowSidebar(false)}
         />
       )}
