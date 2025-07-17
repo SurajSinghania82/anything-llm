@@ -24,6 +24,16 @@ import WorkspaceAgentConfiguration from "./AgentConfig";
 import useUser from "@/hooks/useUser";
 import { useTranslation } from "react-i18next";
 import System from "@/models/system";
+import {
+  BG_GRADIENT_LIGHT,
+  BG_GRADIENT_DARK,
+  GLASS_BG_LIGHT,
+  GLASS_BG_DARK,
+  GLASS_BORDER,
+  GLASS_SHADOW,
+  GLASS_BLUR,
+  GLASS_RADIUS,
+} from "@/theme"; // Make sure this path is correct
 
 const TABS = {
   "general-appearance": GeneralAppearance,
@@ -59,7 +69,6 @@ function ShowWorkspaceChat() {
         setLoading(false);
         return;
       }
-
       const _settings = await System.keys();
       const suggestedMessages = await Workspace.getSuggestedMessages(slug);
       setWorkspace({
@@ -75,16 +84,41 @@ function ShowWorkspaceChat() {
   if (loading) return <FullScreenLoader />;
 
   const TabContent = TABS[tab];
+
+  // Detect dark mode using Tailwind's 'dark:' class or your own logic
+  const isDarkMode =
+    document.documentElement.classList.contains("dark") ||
+    window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+  // Choose glassmorphic styles based on mode
+  const glassStyles = {
+    background: isDarkMode ? BG_GRADIENT_DARK : BG_GRADIENT_LIGHT,
+    borderRadius: GLASS_RADIUS,
+    boxShadow: GLASS_SHADOW,
+    border: GLASS_BORDER,
+    backdropFilter: GLASS_BLUR,
+    WebkitBackdropFilter: GLASS_BLUR,
+    backgroundColor: isDarkMode ? GLASS_BG_DARK : GLASS_BG_LIGHT,
+    height: "100%",
+  };
+
   return (
-    <div className="relative w-screen h-screen overflow-hidden bg-theme-bg-container flex">
+    <div className="relative w-screen h-screen overflow-hidden flex bg-black">
       {/* Wrap everything inside Sidebar */}
       {!isMobile ? (
         <Sidebar>
           <div
-            style={{ height: "100%" }}
-            className="transition-all duration-500 relative md:ml-6 md:mr-0 md:my-0 md:rounded-[16px] bg-theme-bg-secondary flex flex-col flex-1 overflow-hidden"
+            className="transition-all duration-500 relative md:ml-6 md:mr-0 md:my-0 flex flex-col flex-1 overflow-hidden"
+            style={glassStyles}
           >
-            <div className="flex gap-x-8 px-12 pt-6 pb-4 mx-12 border-b-2 border-white light:border-theme-chat-input-border border-opacity-10 items-center justify-between">
+            <div className="flex gap-x-8 px-12 pt-6 pb-4 mx-12 rounded-xl items-center justify-between"
+              style={{
+                background: isDarkMode ? GLASS_BG_DARK : GLASS_BG_LIGHT,
+                borderBottom: GLASS_BORDER,
+                backdropFilter: GLASS_BLUR,
+                WebkitBackdropFilter: GLASS_BLUR,
+              }}
+            >
               <TabItem
                 title={t("workspaces—settings.general")}
                 icon={<Wrench className="h-6 w-6" />}
