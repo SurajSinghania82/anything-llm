@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 import paths from "@/utils/paths";
 import { useTranslation } from "react-i18next";
 import { useSidebarToggle, ToggleSidebarButton } from "./SidebarToggle";
+import { useTheme } from "@/hooks/useTheme";
 
 // Glassmorphic styles
 const SIDEBAR_BG = "rgba(3, 7, 15, 0.88)";
@@ -19,6 +20,17 @@ const SIDEBAR_BORDER = "1.5px solid rgba(255,255,255,0.10)";
 const SIDEBAR_SHADOW = "0 8px 32px 0 rgba(31,38,135,0.25)";
 const SIDEBAR_BLUR = "blur(18px)";
 const SIDEBAR_RADIUS = "28px";
+
+const BG_GRADIENT_LIGHT =
+  "linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)";
+const BG_GRADIENT_DARK =
+  "linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.05) 100%)";
+const GLASS_BG_LIGHT = "rgba(255, 255, 255, 0.1)";
+const GLASS_BG_DARK = "rgba(0, 0, 0, 0.1)";
+const GLASS_BORDER = "1px solid rgba(255,255,255,0.1)";
+const GLASS_SHADOW = "0 4px 8px rgba(0, 0, 0, 0.1)";
+const GLASS_BLUR = "blur(10px)";
+const GLASS_RADIUS = "20px";
 
 export default function Sidebar({ children }) {
   const { user } = useUser();
@@ -31,6 +43,14 @@ export default function Sidebar({ children }) {
     hideModal: hideNewWsModal,
   } = useNewWorkspaceModal();
   const { t } = useTranslation();
+  const { theme } = useTheme();
+  const isLight = theme === "light";
+  const sidebarBg = isLight ? BG_GRADIENT_LIGHT : BG_GRADIENT_DARK;
+  const glassBg = isLight ? GLASS_BG_LIGHT : GLASS_BG_DARK;
+  const glassBorder = GLASS_BORDER;
+  const glassShadow = GLASS_SHADOW;
+  const glassBlur = GLASS_BLUR;
+  const glassRadius = GLASS_RADIUS;
 
   return (
     <>

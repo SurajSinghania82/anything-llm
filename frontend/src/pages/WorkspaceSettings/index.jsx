@@ -100,6 +100,7 @@ function ShowWorkspaceChat() {
     WebkitBackdropFilter: GLASS_BLUR,
     backgroundColor: isDarkMode ? GLASS_BG_DARK : GLASS_BG_LIGHT,
     height: "100%",
+    width: "100%",
   };
 
   return (
@@ -108,12 +109,12 @@ function ShowWorkspaceChat() {
       {!isMobile ? (
         <Sidebar>
           <div
-            className="transition-all duration-500 relative md:ml-6 md:mr-0 md:my-0 flex flex-col flex-1 overflow-hidden"
+            className="transition-all duration-500 relative flex flex-col flex-1 overflow-hidden mx-8 my-8 md:mx-2 md:mr-0 md:my-0"
             style={glassStyles}
           >
-            <div className="flex gap-x-8 px-12 pt-6 pb-4 mx-12 rounded-xl items-center justify-between"
+            <div className="flex gap-x-8 px-12 pt-8 pb-4 mx-12 rounded-xl items-center justify-between"
               style={{
-                background: isDarkMode ? GLASS_BG_DARK : GLASS_BG_LIGHT,
+                // background: isDarkMode ? GLASS_BG_DARK : GLASS_BG_LIGHT, 
                 borderBottom: GLASS_BORDER,
                 backdropFilter: GLASS_BLUR,
                 WebkitBackdropFilter: GLASS_BLUR,
