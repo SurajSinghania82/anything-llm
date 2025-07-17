@@ -76,50 +76,92 @@ function ShowWorkspaceChat() {
 
   const TabContent = TABS[tab];
   return (
-    <div className="w-screen h-screen overflow-hidden bg-theme-bg-container flex">
-      {!isMobile && <Sidebar />}
-      <div
-        style={{ height: isMobile ? "100%" : "calc(100% - 32px)" }}
-        className="transition-all duration-500 relative md:ml-[2px] md:mr-[16px] md:my-[16px] md:rounded-[16px] bg-theme-bg-secondary w-full h-full overflow-y-scroll"
-      >
-        <div className="flex gap-x-10 pt-6 pb-4 ml-16 mr-8 border-b-2 border-white light:border-theme-chat-input-border border-opacity-10">
-          <Link
-            to={paths.workspace.chat(slug)}
-            className="absolute top-2 left-2 md:top-4 md:left-4 transition-all duration-300 p-2 rounded-full text-white bg-theme-sidebar-footer-icon hover:bg-theme-sidebar-footer-icon-hover z-10"
+    <div className="relative w-screen h-screen overflow-hidden bg-theme-bg-container flex">
+      {/* Wrap everything inside Sidebar */}
+      {!isMobile ? (
+        <Sidebar>
+          <div
+            style={{ height: "100%" }}
+            className="transition-all duration-500 relative md:ml-6 md:mr-0 md:my-0 md:rounded-[16px] bg-theme-bg-secondary flex flex-col flex-1 overflow-hidden"
           >
-            <ArrowUUpLeft className="h-5 w-5" weight="fill" />
-          </Link>
-          <TabItem
-            title={t("workspaces—settings.general")}
-            icon={<Wrench className="h-6 w-6" />}
-            to={paths.workspace.settings.generalAppearance(slug)}
-          />
-          <TabItem
-            title={t("workspaces—settings.chat")}
-            icon={<ChatText className="h-6 w-6" />}
-            to={paths.workspace.settings.chatSettings(slug)}
-          />
-          <TabItem
-            title={t("workspaces—settings.vector")}
-            icon={<Database className="h-6 w-6" />}
-            to={paths.workspace.settings.vectorDatabase(slug)}
-          />
-          <TabItem
-            title={t("workspaces—settings.members")}
-            icon={<User className="h-6 w-6" />}
-            to={paths.workspace.settings.members(slug)}
-            visible={["admin", "manager"].includes(user?.role)}
-          />
-          <TabItem
-            title={t("workspaces—settings.agent")}
-            icon={<Robot className="h-6 w-6" />}
-            to={paths.workspace.settings.agentConfig(slug)}
-          />
+            <div className="flex gap-x-8 pt-6 pb-4 border-b-2 border-white light:border-theme-chat-input-border border-opacity-10">
+              <TabItem
+                title={t("workspaces—settings.general")}
+                icon={<Wrench className="h-6 w-6" />}
+                to={paths.workspace.settings.generalAppearance(slug)}
+              />
+              <TabItem
+                title={t("workspaces—settings.chat")}
+                icon={<ChatText className="h-6 w-6" />}
+                to={paths.workspace.settings.chatSettings(slug)}
+              />
+              <TabItem
+                title={t("workspaces—settings.vector")}
+                icon={<Database className="h-6 w-6" />}
+                to={paths.workspace.settings.vectorDatabase(slug)}
+              />
+              <TabItem
+                title={t("workspaces—settings.members")}
+                icon={<User className="h-6 w-6" />}
+                to={paths.workspace.settings.members(slug)}
+                visible={["admin", "manager"].includes(user?.role)}
+              />
+              <TabItem
+                title={t("workspaces—settings.agent")}
+                icon={<Robot className="h-6 w-6" />}
+                to={paths.workspace.settings.agentConfig(slug)}
+              />
+            </div>
+            <div className="px-16 py-6 flex-1 overflow-y-auto">
+              <TabContent slug={slug} workspace={workspace} />
+            </div>
+          </div>
+        </Sidebar>
+      ) : (
+        // Mobile view without sidebar
+        <div
+          style={{ height: "100%" }}
+          className="transition-all duration-500 relative md:ml-0 md:mr-0 md:my-0 md:rounded-[16px] bg-theme-bg-secondary w-full h-full overflow-y-scroll"
+        >
+          <div className="flex gap-x-5 pt-6 pb-4 border-b-2 border-white light:border-theme-chat-input-border border-opacity-10">
+            <Link
+              to={paths.workspace.chat(slug)}
+              className="absolute top-2 left-2 md:top-4 md:left-4 transition-all duration-300 p-2 rounded-full text-white bg-theme-sidebar-footer-icon hover:bg-theme-sidebar-footer-icon-hover z-10"
+            >
+              <ArrowUUpLeft className="h-5 w-5" weight="fill" />
+            </Link>
+            <TabItem
+              title={t("workspaces—settings.general")}
+              icon={<Wrench className="h-6 w-6" />}
+              to={paths.workspace.settings.generalAppearance(slug)}
+            />
+            <TabItem
+              title={t("workspaces—settings.chat")}
+              icon={<ChatText className="h-6 w-6" />}
+              to={paths.workspace.settings.chatSettings(slug)}
+            />
+            <TabItem
+              title={t("workspaces—settings.vector")}
+              icon={<Database className="h-6 w-6" />}
+              to={paths.workspace.settings.vectorDatabase(slug)}
+            />
+            <TabItem
+              title={t("workspaces—settings.members")}
+              icon={<User className="h-6 w-6" />}
+              to={paths.workspace.settings.members(slug)}
+              visible={["admin", "manager"].includes(user?.role)}
+            />
+            <TabItem
+              title={t("workspaces—settings.agent")}
+              icon={<Robot className="h-6 w-6" />}
+              to={paths.workspace.settings.agentConfig(slug)}
+            />
+          </div>
+          <div className="px-16 py-6">
+            <TabContent slug={slug} workspace={workspace} />
+          </div>
         </div>
-        <div className="px-16 py-6">
-          <TabContent slug={slug} workspace={workspace} />
-        </div>
-      </div>
+      )}
     </div>
   );
 }
@@ -130,10 +172,9 @@ function TabItem({ title, icon, to, visible = true }) {
     <NavLink
       to={to}
       className={({ isActive }) =>
-        `${
-          isActive
-            ? "text-sky-400 pb-4 border-b-[4px] -mb-[19px] border-sky-400"
-            : "text-white/60 hover:text-sky-400"
+        `${isActive
+          ? "text-sky-400 pb-4 border-b-[4px] -mb-[19px] border-sky-400"
+          : "text-white/60 hover:text-sky-400"
         } ` + " flex gap-x-2 items-center font-medium"
       }
     >
