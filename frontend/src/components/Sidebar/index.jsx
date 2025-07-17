@@ -44,13 +44,22 @@ export default function Sidebar({ children }) {
   } = useNewWorkspaceModal();
   const { t } = useTranslation();
   const { theme } = useTheme();
+
+  // Theme-based styles
   const isLight = theme === "light";
-  const sidebarBg = isLight ? BG_GRADIENT_LIGHT : BG_GRADIENT_DARK;
-  const glassBg = isLight ? GLASS_BG_LIGHT : GLASS_BG_DARK;
-  const glassBorder = GLASS_BORDER;
-  const glassShadow = GLASS_SHADOW;
-  const glassBlur = GLASS_BLUR;
-  const glassRadius = GLASS_RADIUS;
+  const SIDEBAR_BG = isLight
+    ? "linear-gradient(180deg, rgba(255,255,255,0.7) 0%, rgba(243,244,246,0.8) 100%)"
+    : "rgba(3, 7, 15, 0.88)";
+  const SIDEBAR_BORDER = "1.5px solid rgba(255,255,255,0.10)";
+  const SIDEBAR_SHADOW = isLight
+    ? "0 8px 32px 0 rgba(200,200,200,0.15)"
+    : "0 8px 32px 0 rgba(31,38,135,0.25)";
+  const SIDEBAR_BLUR = "blur(18px)";
+  const SIDEBAR_RADIUS = "28px";
+  const FOOTER_BG = isLight
+    ? "rgba(243,244,246,0.85)"
+    : "rgba(17,24,39,0.65)";
+  const FOOTER_BORDER_TOP = "1px solid rgba(255,255,255,0.06)";
 
   return (
     <>
@@ -107,7 +116,9 @@ export default function Sidebar({ children }) {
               {(!user || user?.role !== "default") && (
                 <button
                   onClick={showNewWsModal}
-                  className="flex items-center gap-2 px-4 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-2xl shadow-md transition-all duration-200 w-full justify-center backdrop-blur-md border border-white/10"
+                  className={`flex items-center gap-2 px-4 py-3 ${
+                    isLight ? "bg-slate-100/60 hover:bg-slate-200/80 text-slate-800" : "bg-white/10 hover:bg-white/20 text-white"
+                  } font-semibold rounded-2xl shadow-md transition-all duration-200 w-full justify-center backdrop-blur-md border border-white/10`}
                   style={{ marginBottom: "8px" }}
                 >
                   <Plus size={20} weight="bold" />
@@ -121,7 +132,9 @@ export default function Sidebar({ children }) {
           {/* Settings button floating above footer */}
           <div className="w-full flex justify-center mb-2">
             <div
-              className="flex items-center justify-center bg-white/10 hover:bg-white/20 text-white rounded-full p-3 shadow-lg transition-all duration-200 backdrop-blur-md border border-white/10"
+              className={`flex items-center justify-center ${
+                isLight ? "bg-slate-100/60 hover:bg-slate-200/80 text-slate-800" : "bg-white/10 hover:bg-white/20 text-white"
+              } rounded-full p-3 shadow-lg transition-all duration-200 backdrop-blur-md border border-white/10`}
               style={{
                 position: "absolute",
                 bottom: "70px",
@@ -139,8 +152,8 @@ export default function Sidebar({ children }) {
           <div
             className="w-full px-6 py-4"
             style={{
-              background: "rgba(17,24,39,0.65)",
-              borderTop: "1px solid rgba(255,255,255,0.06)",
+              background: FOOTER_BG,
+              borderTop: FOOTER_BORDER_TOP,
               borderBottomLeftRadius: SIDEBAR_RADIUS,
               borderBottomRightRadius: SIDEBAR_RADIUS,
               position: "absolute",
