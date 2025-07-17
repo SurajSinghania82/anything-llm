@@ -114,7 +114,7 @@ function ShowWorkspaceChat() {
           >
             <div className="flex gap-x-8 px-12 pt-8 pb-4 mx-12 rounded-xl items-center justify-between"
               style={{
-                // background: isDarkMode ? GLASS_BG_DARK : GLASS_BG_LIGHT, 
+                background: isDarkMode ? GLASS_BG_DARK : GLASS_BG_LIGHT, 
                 borderBottom: GLASS_BORDER,
                 backdropFilter: GLASS_BLUR,
                 WebkitBackdropFilter: GLASS_BLUR,

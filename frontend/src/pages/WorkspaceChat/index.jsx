@@ -12,20 +12,21 @@ import {
   BG_GRADIENT_DARK,
 } from "@/theme/themeColors";
 import { useSidebarToggle, ToggleSidebarButton } from "@/components/Sidebar/SidebarToggle";
+import { useTheme } from "@/hooks/useTheme"; // <-- Import theme hook
 
 export default function WorkspaceChat() {
   const { loading, requiresAuth, mode } = usePasswordModal();
-  const [isDark, setIsDark] = useState(true);
+  const { theme } = useTheme(); // <-- Use theme from context
 
   if (loading) return <FullScreenLoader />;
   if (requiresAuth !== false) {
     return <>{requiresAuth !== null && <PasswordModal mode={mode} />}</>;
   }
 
-  return <ShowWorkspaceChat isDark={isDark} setIsDark={setIsDark} />;
+  return <ShowWorkspaceChat theme={theme} />;
 }
 
-function ShowWorkspaceChat({ isDark, setIsDark }) {
+function ShowWorkspaceChat({ theme }) {
   const { slug } = useParams();
   const [workspace, setWorkspace] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -51,7 +52,8 @@ function ShowWorkspaceChat({ isDark, setIsDark }) {
     getWorkspace();
   }, [slug]);
 
-  const background = isDark ? BG_GRADIENT_DARK : BG_GRADIENT_LIGHT;
+  // Use theme to determine background
+  const background = theme === "light" ? BG_GRADIENT_LIGHT : BG_GRADIENT_DARK;
 
   return (
     <div
@@ -69,7 +71,11 @@ function ShowWorkspaceChat({ isDark, setIsDark }) {
       {/* Overlay when sidebar is open */}
       {!isMobile && showSidebar && (
         <div
-          className="fixed inset-0 bg-black/40 z-10 transition-opacity duration-300"
+          className={`fixed inset-0 z-10 transition-opacity duration-300 ${
+            theme === "light"
+              ? "bg-slate-200/60"
+              : "bg-black/40"
+          }`}
           onClick={() => setShowSidebar(false)}
         />
       )}
