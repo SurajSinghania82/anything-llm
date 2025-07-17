@@ -84,7 +84,7 @@ function ShowWorkspaceChat() {
             style={{ height: "100%" }}
             className="transition-all duration-500 relative md:ml-6 md:mr-0 md:my-0 md:rounded-[16px] bg-theme-bg-secondary flex flex-col flex-1 overflow-hidden"
           >
-            <div className="flex gap-x-8 pt-6 pb-4 border-b-2 border-white light:border-theme-chat-input-border border-opacity-10">
+            <div className="flex gap-x-8 px-12 pt-6 pb-4 mx-12 border-b-2 border-white light:border-theme-chat-input-border border-opacity-10 items-center justify-between">
               <TabItem
                 title={t("workspaces—settings.general")}
                 icon={<Wrench className="h-6 w-6" />}
