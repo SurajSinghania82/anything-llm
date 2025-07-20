@@ -110,7 +110,10 @@ const HistoricalMessage = ({
               saveChanges={saveEditedMessage}
             />
           ) : (
-            <div className="break-words">
+            <div
+              className={`break-words${role === "user" ? " bg-theme-bg-chat-input-bg rounded-lg px-3 py-2" : ""}`}
+              style={role === "user" ? { maxWidth: "70%" } : {}}
+            >
               <RenderChatContent
                 role={role}
                 message={message}
@@ -201,7 +204,7 @@ const RenderChatContent = memo(
     if (role !== "assistant")
       return (
         <span
-          className="flex flex-col gap-y-1"
+          className="flex flex-col gap-y-1 text-right bg-theme-bg-chat-input-bg"
           dangerouslySetInnerHTML={{
             __html: DOMPurify.sanitize(renderMarkdown(message)),
           }}

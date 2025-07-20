@@ -39,10 +39,8 @@ export default function ChatHistory({
   const { getMessageAlignment } = useChatMessageAlignment();
 
   useEffect(() => {
-    if (!isUserScrolling && (isAtBottom || isStreaming)) {
-      scrollToBottom(false); // Use instant scroll for auto-scrolling
-    }
-  }, [history, isAtBottom, isStreaming, isUserScrolling]);
+    scrollToBottom(false);
+  }, [history]);
 
   const handleScroll = (e) => {
     const { scrollTop, scrollHeight, clientHeight } = e.target;
