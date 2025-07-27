@@ -62,7 +62,7 @@ export default {
     return "https://docs.athena.coreinsightsai.com/features/chat-modes";
   },
   mailToMintplex: () => {
-    return "mailto:team@coreinsightsai.com";
+    return "mailto:clientrelations@coreinsightsai.com";
   },
   hosting: () => {
     return "https://docs.athena.coreinsightsai.com/aio-checkout?product=anythingllm";
