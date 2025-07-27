@@ -35,8 +35,8 @@ export function ChecklistItem({ id, title, action, onAction, icon: Icon }) {
     <div
       className={`flex items-center gap-x-4 transition-colors cursor-pointer rounded-lg p-3 group hover:bg-theme-checklist-item-bg-hover ${
         isCompleted
-          ? "bg-theme-checklist-item-completed-bg"
-          : "bg-theme-checklist-item-bg"
+          ? "bg-theme-checklist-item-completed-bg/10"
+          : "bg-theme-checklist-item-bg border border-theme-home-border"
       }`}
       onClick={handleClick}
     >
