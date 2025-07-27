@@ -1214,6 +1214,7 @@ const TRANSLATIONS = {
       },
     },
   },
-};
+},
+}
 
 export default TRANSLATIONS;
