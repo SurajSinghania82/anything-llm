@@ -19,6 +19,11 @@ export default function UploadFile({
   const [ready, setReady] = useState(false);
   const [files, setFiles] = useState([]);
   const [fetchingUrl, setFetchingUrl] = useState(false);
+  const [uploadSummary, setUploadSummary] = useState({
+    total: 0,
+    success: 0,
+    failed: 0,
+  });
 
   const handleSendLink = async (e) => {
     e.preventDefault();
@@ -45,8 +50,21 @@ export default function UploadFile({
   // Queue all fetchKeys calls through the same debouncer to prevent spamming the server.
   // either a success or error will trigger a fetchKeys call so the UI is not stuck loading.
   const debouncedFetchKeys = debounce(() => fetchKeys(true), 1000);
-  const handleUploadSuccess = () => debouncedFetchKeys();
-  const handleUploadError = () => debouncedFetchKeys();
+  const handleUploadSuccess = () => {
+    setUploadSummary((prev) => ({
+      ...prev,
+      success: prev.success + 1,
+    }));
+    debouncedFetchKeys();
+  };
+  
+  const handleUploadError = () => {
+    setUploadSummary((prev) => ({
+      ...prev,
+      failed: prev.failed + 1,
+    }));
+    debouncedFetchKeys();
+  };
 
   const onDrop = async (acceptedFiles, rejections) => {
     const newAccepted = acceptedFiles.map((file) => {
@@ -62,6 +80,11 @@ export default function UploadFile({
         rejected: true,
         reason: file.errors[0].code,
       };
+    });
+    setUploadSummary({
+      total: newAccepted.length + newRejected.length,
+      success: 0,
+      failed: newRejected.length,
     });
     setFiles([...newAccepted, ...newRejected]);
   };
@@ -111,23 +134,34 @@ export default function UploadFile({
             </div>
           </div>
         ) : (
-          <div className="grid grid-cols-2 gap-2 overflow-auto max-h-[180px] p-1 overflow-y-scroll no-scroll">
-            {files.map((file) => (
-              <FileUploadProgress
-                key={file.uid}
-                file={file.file}
-                uuid={file.uid}
-                setFiles={setFiles}
-                slug={workspace.slug}
-                rejected={file?.rejected}
-                reason={file?.reason}
-                onUploadSuccess={handleUploadSuccess}
-                onUploadError={handleUploadError}
-                setLoading={setLoading}
-                setLoadingMessage={setLoadingMessage}
-              />
-            ))}
-          </div>
+          <>
+            <div>
+              {(uploadSummary.success > 0 || uploadSummary.failed > 0) && (
+                <div className="text-sm text-white mt-2">
+                  📂 Total files selected: {uploadSummary.total} <br />
+                  ✅ {uploadSummary.success} file(s) uploaded successfully <br />
+                  ❌ {uploadSummary.failed} file(s) failed to upload
+                </div>
+              )}
+            </div>
+            <div className="grid grid-cols-2 gap-2 overflow-auto max-h-[180px] p-1 overflow-y-scroll no-scroll">
+              {files.map((file) => (
+                <FileUploadProgress
+                  key={file.uid}
+                  file={file.file}
+                  uuid={file.uid}
+                  setFiles={setFiles}
+                  slug={workspace.slug}
+                  rejected={file?.rejected}
+                  reason={file?.reason}
+                  onUploadSuccess={handleUploadSuccess}
+                  onUploadError={handleUploadError}
+                  setLoading={setLoading}
+                  setLoadingMessage={setLoadingMessage}
+                />
+              ))}
+            </div>
+          </>
         )}
       </div>
       <div className="text-center text-white text-opacity-50 text-xs font-medium w-[560px] py-2">

@@ -214,12 +214,12 @@ export default function App() {
                     path="/settings/system-prompt-variables"
                     element={<AdminRoute Component={SystemPromptVariables} />}
                   />
-                  <Route
+                  {/* <Route
                     path="/settings/browser-extension"
                     element={
                       <ManagerRoute Component={GeneralBrowserExtension} />
                     }
-                  />
+                  /> */}
                   <Route
                     path="/settings/workspace-chats"
                     element={<ManagerRoute Component={GeneralChats} />}
