@@ -1,4 +1,4 @@
-name: 
+name: AthenaLLM
 
 networks:
   anything-llm:
@@ -6,7 +6,7 @@ networks:
 
 services:
   anything-llm:
-    container_name: 
+    container_name: athena-llm
     build:
       context: ../.
       dockerfile: ./docker/Dockerfile
