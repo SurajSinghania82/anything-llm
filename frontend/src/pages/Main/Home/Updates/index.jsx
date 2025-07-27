@@ -36,7 +36,7 @@ export default function Updates() {
 
   return (
     <div>
-      <h1 className="text-theme-home-text uppercase text-sm font-semibold mb-4">
+      {/* <h1 className="text-theme-home-text uppercase text-sm font-semibold mb-4">
         {t("main-page.announcements.title")}
       </h1>
       <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -51,7 +51,7 @@ export default function Updates() {
             goto={item.goto}
           />
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }
