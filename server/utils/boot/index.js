@@ -2,7 +2,7 @@ const { Telemetry } = require("../../models/telemetry");
 const { BackgroundService } = require("../BackgroundWorkers");
 const { EncryptionManager } = require("../EncryptionManager");
 const { CommunicationKey } = require("../comKey");
-const setupTelemetry = require("../telemetry");
+// const setupTelemetry = require("../telemetry");
 
 // Testing SSL? You can make a self signed certificate and point the ENVs to that location
 // make a directory in server called 'sslcert' - cd into it
@@ -27,7 +27,7 @@ function bootSSL(app, port = 3001) {
 
     server
       .listen(port, async () => {
-        await setupTelemetry();
+        // await setupTelemetry();
         new CommunicationKey(true);
         new EncryptionManager();
         new BackgroundService().boot();
@@ -56,7 +56,7 @@ function bootHTTP(app, port = 3001) {
 
   app
     .listen(port, async () => {
-      await setupTelemetry();
+      // await setupTelemetry();
       new CommunicationKey(true);
       new EncryptionManager();
       new BackgroundService().boot();

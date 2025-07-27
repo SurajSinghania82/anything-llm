@@ -112,5 +112,5 @@ async function setupTelemetry() {
 module.exports = {
   checkForMigrations,
   validateTablePragmas,
-  setupTelemetry,
+  // setupTelemetry,
 };
