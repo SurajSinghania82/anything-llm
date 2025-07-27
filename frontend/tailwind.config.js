@@ -22,7 +22,6 @@ export default {
       },
       colors: {
         "black-900": "#141414",
-        accent: "#3D4147",
         "sidebar-button": "#31353A",
         sidebar: "#25272C",
         "historical-msg-system": "rgba(255, 255, 255, 0.05);",
@@ -48,6 +47,9 @@ export default {
         teal: "#0BA5EC",
 
         // Generic theme colors
+        "theme-bg-quicklinks-secondary": "var(--theme-bg-quicklinks-secondary)",
+        accent: "var(--accent-color)",
+        accent1: "var(--accent-color1)",
         theme: {
           bg: {
             primary: "var(--theme-bg-primary)",

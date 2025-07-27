@@ -94,7 +94,7 @@ function AnnouncementCard({
             {subtitle}
           </p>
           <div className="flex items-center gap-x-4 text-xs text-theme-home-text-secondary">
-            <span className="text-theme-home-update-source">{author}</span>
+            <span className="text-accent">{author}</span>
             <span>{date ?? "Recently"}</span>
           </div>
         </div>

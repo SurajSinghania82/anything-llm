@@ -74,7 +74,7 @@ export default function QuickLinks() {
         </button>
         <button
           onClick={createWorkspace}
-          className="border border-theme-home-border text-sm py-2 px-4 font-semibold bg-theme-bg-secondary rounded-lg text-theme-home-button-secondary-text flex flex-col gap-2 items-center justify-center transition-all duration-200 hover:bg-theme-home-button-secondary-hover hover:text-theme-home-button-secondary-hover-text"
+          className="border border-theme-home-border text-sm py-2 px-4 font-semibold bg-accent rounded-lg text-theme-home-button-secondary-text flex flex-col gap-2 items-center justify-center transition-all duration-200 hover:bg-theme-home-button-secondary-hover hover:text-theme-home-button-secondary-hover-text"
         >
           <Plus size={16} />
           {t("main-page.quickLinks.createWorkspace")}

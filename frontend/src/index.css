@@ -8,6 +8,7 @@
 
 :root {
   /* Default theme */
+  --accent-color: #ff7057;
   --theme-loader: #ffffff;
   --theme-bg-primary: #0e0f0f;
   --theme-bg-secondary: #1b1b1e;
@@ -25,6 +26,7 @@
   --theme-sidebar-subitem-selected: rgba(255, 255, 255, 0.05);
   --theme-sidebar-thread-selected: rgba(255, 255, 255, 0.05);
   --theme-popup-menu-bg: #000000;
+  --theme-bg-quicklinks-secondary: #ff7057;
 
   --theme-sidebar-subitem-hover: rgba(255, 255, 255, 0.05);
   --theme-sidebar-border: rgba(255, 255, 255, 0.1);
@@ -106,12 +108,15 @@
 }
 
 [data-theme="light"] {
+  --accent-color: #ff7057;
+  --accent-color1: #72d6cc;
   --theme-loader: #000000;
   --theme-bg-primary: #ffffff;
-  --theme-bg-secondary: #ff7057;
+  --theme-bg-secondary: #ffffff;
   --theme-bg-sidebar: #ffffff;
   --theme-bg-container: #fafafa;
   --theme-popup-menu-bg: #c2e7fe;
+  --theme-bg-quicklinks-secondary: #ff7057;
 
   --theme-bg-chat: #ffffff;
   --theme-bg-chat-input: #eaeaea;

@@ -141,7 +141,7 @@ function FeatureCard({
             )}
             <button
               onClick={onSecondaryAction}
-              className="w-full h-[36px] rounded-lg text-theme-home-button-secondary-text text-sm font-medium flex items-center justify-center transition-all duration-200 hover:bg-theme-home-button-secondary-hover hover:text-theme-home-button-secondary-hover-text"
+              className="w-full h-[36px] rounded-lg text-accent text-sm font-medium flex items-center justify-center transition-all duration-200 hover:bg-theme-home-button-secondary-hover hover:text-theme-home-button-secondary-hover-text"
             >
               {secondaryAction}
             </button>
