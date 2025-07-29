@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from "react";
-import Workspace from "@/models/workspace";
-import LoadingChat from "./LoadingChat";
+import React, { useState, useEffect } from "react";
 import ChatContainer from "./ChatContainer";
 import paths from "@/utils/paths";
 import ModalWrapper from "../ModalWrapper";
@@ -10,104 +8,105 @@ import {
   TTSProvider,
   useWatchForAutoPlayAssistantTTSResponse,
 } from "../contexts/TTSProvider";
+import { useTheme } from "@/hooks/useTheme";
+import {
+  GLASS_BG_LIGHT,
+  GLASS_BG_DARK,
+  GLASS_BORDER,
+  GLASS_SHADOW,
+  GLASS_BLUR,
+  GLASS_RADIUS,
+} from "@/theme";
 
-export default function WorkspaceChat({ loading, workspace, isDark }) {
-  useWatchForAutoPlayAssistantTTSResponse();
-  const { threadSlug = null } = useParams();
+export default function WorkspaceChat({ loading, workspace }) {
+  const { theme } = useTheme();
   const [history, setHistory] = useState([]);
-  const [loadingHistory, setLoadingHistory] = useState(true);
 
   useEffect(() => {
     async function getHistory() {
-      if (loading) return;
-      if (!workspace?.slug) {
-        setLoadingHistory(false);
-        return false;
+      if (!workspace?.slug) return;
+      try {
+        const chatHistory = await Workspace.chatHistory(workspace.slug);
+        setHistory(chatHistory);
+      } catch (error) {
+        console.error("Failed to load chat history:", error);
+        setHistory([]);
       }
-
-      const chatHistory = threadSlug
-        ? await Workspace.threads.chatHistory(workspace.slug, threadSlug)
-        : await Workspace.chatHistory(workspace.slug);
-
-      setHistory(chatHistory);
-      setLoadingHistory(false);
     }
     getHistory();
-  }, [workspace, loading]);
+  }, [workspace?.slug]);
 
-  if (loadingHistory) return <LoadingChat />;
-  if (!loading && !loadingHistory && !workspace) {
+  if (loading) {
     return (
-      <>
-        {loading === false && !workspace && (
-          <ModalWrapper isOpen={true}>
-            <div className="relative w-full max-w-2xl bg-theme-bg-secondary rounded-lg shadow border-2 border-theme-modal-border">
-              <div className="flex flex-col gap-y-4 w-full p-6 text-center">
-                <p className="font-semibold text-red-500 text-xl">
-                  Workspace not found!
-                </p>
-                <p className="text-sm mt-4 text-white">
-                  It looks like a workspace by this name is not available.
-                </p>
-
-                <div className="flex w-full justify-center items-center mt-4">
-                  <a
-                    href={paths.home()}
-                    className="transition-all duration-300 bg-white text-black hover:opacity-60 px-4 py-2 rounded-lg text-sm flex items-center gap-x-2"
-                  >
-                    Go back to homepage
-                  </a>
-                </div>
-              </div>
-            </div>
-          </ModalWrapper>
-        )}
-        <LoadingChat />
-      </>
+      <div className="flex items-center justify-center h-full">
+        <div className={`text-lg ${theme === "light" ? "text-gray-600" : "text-white/60"}`}>
+          Loading workspace...
+        </div>
+      </div>
     );
   }
 
-  setEventDelegatorForCodeSnippets();
+  if (!workspace) {
+    return (
+      <div className="flex items-center justify-center h-full">
+        <div 
+          className="p-8 rounded-lg text-center max-w-md"
+          style={{
+            background: theme === "light" ? GLASS_BG_LIGHT : GLASS_BG_DARK,
+            border: GLASS_BORDER,
+            borderRadius: GLASS_RADIUS,
+            backdropFilter: GLASS_BLUR,
+            WebkitBackdropFilter: GLASS_BLUR,
+            boxShadow: GLASS_SHADOW,
+          }}
+        >
+          <h2 className={`text-xl font-semibold mb-4 ${
+            theme === "light" ? "text-gray-800" : "text-white"
+          }`}>
+            Workspace Not Found
+          </h2>
+          <p className={`mb-6 ${
+            theme === "light" ? "text-gray-600" : "text-white/70"
+          }`}>
+            The workspace you're looking for doesn't exist or you don't have access to it.
+          </p>
+          <a
+            href={paths.home()}
+            className={`inline-block px-6 py-2 rounded-lg transition-all duration-200 ${
+              theme === "light"
+                ? "bg-purple-500 hover:bg-purple-600 text-white"
+                : "bg-white/10 hover:bg-white/20 text-white border border-white/20"
+            }`}
+          >
+            Go Home
+          </a>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <TTSProvider>
-      <DnDFileUploaderProvider workspace={workspace}>
-        <ChatContainer workspace={workspace} knownHistory={history} isDark={isDark} />
-      </DnDFileUploaderProvider>
-    </TTSProvider>
+    <div
+      className="relative w-full h-full transition-all duration-500"
+      style={{
+        background: theme === "light" 
+          ? GLASS_BG_LIGHT
+          : GLASS_BG_DARK,
+        backdropFilter: GLASS_BLUR,
+        WebkitBackdropFilter: GLASS_BLUR,
+        border: GLASS_BORDER,
+        borderRadius: GLASS_RADIUS,
+        boxShadow: GLASS_SHADOW,
+      }}
+    >
+      <TTSProvider>
+        <DnDFileUploaderProvider workspace={workspace}>
+          <ChatContainer 
+            workspace={workspace} 
+            knownHistory={history}
+          />
+        </DnDFileUploaderProvider>
+      </TTSProvider>
+    </div>
   );
-}
-
-// Enables us to safely markdown and sanitize all responses without risk of injection
-// but still be able to attach a handler to copy code snippets on all elements
-// that are code snippets.
-function copyCodeSnippet(uuid) {
-  const target = document.querySelector(`[data-code="${uuid}"]`);
-  if (!target) return false;
-  const markdown =
-    target.parentElement?.parentElement?.querySelector(
-      "pre:first-of-type"
-    )?.innerText;
-  if (!markdown) return false;
-
-  window.navigator.clipboard.writeText(markdown);
-  target.classList.add("text-green-500");
-  const originalText = target.innerHTML;
-  target.innerText = "Copied!";
-  target.setAttribute("disabled", true);
-
-  setTimeout(() => {
-    target.classList.remove("text-green-500");
-    target.innerHTML = originalText;
-    target.removeAttribute("disabled");
-  }, 2500);
-}
-
-// Listens and hunts for all data-code-snippet clicks.
-export function setEventDelegatorForCodeSnippets() {
-  document?.addEventListener("click", function (e) {
-    const target = e.target.closest("[data-code-snippet]");
-    const uuidCode = target?.dataset?.code;
-    if (!uuidCode) return false;
-    copyCodeSnippet(uuidCode);
-  });
 }

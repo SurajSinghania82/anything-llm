@@ -64,7 +64,7 @@ function ShowWorkspaceChat({ theme }) {
       }}
     >
       {/* Orbs overlay */}
-      <OrbsBackground style={{
+      <OrbsBackground theme={theme} style={{
         position: "absolute", inset: 0, zIndex: 0, pointerEvents: "none"
       }} />
 

@@ -1,9 +1,9 @@
 import React from "react";
-import { useTheme } from "@/ThemeContext";
+import { useTheme } from "@/hooks/useTheme"; // Fixed import path
 
 export default function OrbsBackground() {
   const { theme } = useTheme();
-  const isDark = theme === "dark";
+  const isDark = theme === "default"; // Fixed theme comparison
 
   return (
     <div className="absolute inset-0 z-10 pointer-events-none">
