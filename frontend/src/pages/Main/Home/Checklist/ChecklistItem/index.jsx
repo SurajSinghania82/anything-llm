@@ -35,8 +35,8 @@ export function ChecklistItem({ id, title, action, onAction, icon: Icon }) {
     <div
       className={`flex items-center gap-x-4 transition-colors cursor-pointer rounded-lg p-3 group hover:bg-theme-checklist-item-bg-hover ${
         isCompleted
-          ? "bg-theme-checklist-item-completed-bg"
-          : "bg-theme-checklist-item-bg"
+          ? "bg-accent1/10 border border-accent1/50"
+          : "bg-theme-checklist-item-bg border border-theme-home-border"
       }`}
       onClick={handleClick}
     >
@@ -72,7 +72,7 @@ export function ChecklistItem({ id, title, action, onAction, icon: Icon }) {
           />
         </div>
       ) : (
-        <button className="w-[64px] h-[24px] rounded-md bg-white/10 light:bg-white/70 text-theme-checklist-item-text font-semibold text-xs transition-all duration-200 flex items-center justify-center hover:bg-white/20 light:hover:bg-white/60">
+        <button className="w-[64px] h-[24px] rounded-md bg-white/10 light:bg-white/70 text-theme-checklist-item-text font-semibold text-xs transition-all duration-200 flex items-center justify-center hover:bg-accent1 light:hover:bg-white/60">
           {action}
         </button>
       )}

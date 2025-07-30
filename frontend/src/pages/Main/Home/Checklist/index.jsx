@@ -181,13 +181,13 @@ export default function Checklist() {
           <div className="flex items-center gap-x-2">
             <button
               onClick={handleClose}
-              className="text-theme-home-text-secondary bg-theme-home-bg-button px-3 py-1 rounded-xl hover:bg-white/10 transition-colors text-xs light:bg-black-100"
+              className="text-theme-home-text-secondary bg-theme-home-bg-button px-3 py-1 rounded-xl hover:bg-white/50 transition-colors text-xs light:bg-black-100"
             >
               {t("main-page.checklist.dismiss")}
             </button>
           </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
           {CHECKLIST_ITEMS().map((item) => (
             <MemoizedChecklistItem
               key={item.id}
