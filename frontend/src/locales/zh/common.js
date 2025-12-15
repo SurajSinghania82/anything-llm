@@ -126,7 +126,7 @@ const TRANSLATIONS = {
     checklist: {
       title: "入门指南",
       tasksLeft: "剩余任务",
-      completed: "你正在成为AnythingLLM专家的路上！",
+      completed: "你正在成为AthenaLLM专家的路上！",
       dismiss: "关闭",
       tasks: {
         create_workspace: {
@@ -405,15 +405,15 @@ const TRANSLATIONS = {
   customization: {
     interface: {
       title: "界面偏好设置",
-      description: "设置您的 AnythingLLM 界面偏好。",
+      description: "设置您的 AthenaLLM 界面偏好。",
     },
     branding: {
       title: "品牌与白标设置",
-      description: "使用自定义品牌对白标您的 AnythingLLM 实例。",
+      description: "使用自定义品牌对白标您的 AthenaLLM 实例。",
     },
     chat: {
       title: "聊天",
-      description: "设置您的 AnythingLLM 聊天偏好。",
+      description: "设置您的 AthenaLLM 聊天偏好。",
       auto_submit: {
         title: "自动提交语音输入",
         description: "在静音一段时间后自动提交语音输入",
@@ -450,7 +450,7 @@ const TRANSLATIONS = {
       },
       "display-language": {
         title: "显示语言",
-        description: "选择显示 AnythingLLM 界面所用的语言（若有翻译可用）。",
+        description: "选择显示 AthenaLLM 界面所用的语言（若有翻译可用）。",
       },
       logo: {
         title: "品牌标志",
@@ -467,7 +467,7 @@ const TRANSLATIONS = {
         system: "系统",
         user: "用户",
         message: "信息",
-        assistant: "AnythingLLM 聊天助手",
+        assistant: "AthenaLLM 聊天助手",
         "double-click": "双击进行编辑...",
         save: "保存信息",
       },
@@ -757,22 +757,22 @@ const TRANSLATIONS = {
       fetching: "正在获取...",
       "fetch-website": "获取网站",
       "privacy-notice":
-        "这些文件将被上传到此 AnythingLLM 实例上的文档处理器。这些文件不会发送或共享给第三方。",
+        "这些文件将被上传到此 AthenaLLM 实例上的文档处理器。这些文件不会发送或共享给第三方。",
     },
     pinning: {
       what_pinning: "什么是文档固定？",
       pin_explained_block1:
-        "当您在 AnythingLLM 中<b>固定</b>一个文档时，我们会将整个文档内容注入到您的提示窗口中，让 LLM 能够完全理解它。",
+        "当您在 AthenaLLM 中<b>固定</b>一个文档时，我们会将整个文档内容注入到您的提示窗口中，让 LLM 能够完全理解它。",
       pin_explained_block2:
         "这在 <b>大上下文模型</b> 或关键的小文件中效果最佳。",
       pin_explained_block3:
-        "如果默认情况下无法从 AnythingLLM 获取满意的答案，固定文档是提高答案质量的好方法。",
+        "如果默认情况下无法从 AthenaLLM 获取满意的答案，固定文档是提高答案质量的好方法。",
       accept: "好的，知道了",
     },
     watching: {
       what_watching: "什么是监控文档？",
       watch_explained_block1:
-        "当您在 AnythingLLM 中<b>监控</b>一个文档时，我们会<i>自动</i>按定期间隔从其原始来源同步文档内容。系统会自动更新在所有使用该文档的工作区中的内容。",
+        "当您在 AthenaLLM 中<b>监控</b>一个文档时，我们会<i>自动</i>按定期间隔从其原始来源同步文档内容。系统会自动更新在所有使用该文档的工作区中的内容。",
       watch_explained_block2:
         "此功能当前仅支持在线内容，不适用于手动上传的文档。",
       watch_explained_block3_start: "您可以在 ",
@@ -942,7 +942,7 @@ const TRANSLATIONS = {
         unauthenticated: {
           title: "需要验证",
           description:
-            "在发布项目之前，您需要通过 AnythingLLM 社区中心进行验证。",
+            "在发布项目之前，您需要通过 AthenaLLM 社区中心进行验证。",
           button: "连接到社区中心",
         },
       },
@@ -993,7 +993,7 @@ const TRANSLATIONS = {
     password: {
       title: "密码保护",
       description:
-        "用密码保护你的AnythingLLM实例。如果你忘记了密码，那么没有恢复方法，所以请确保保存这个密码。",
+        "用密码保护你的AthenaLLM实例。如果你忘记了密码，那么没有恢复方法，所以请确保保存这个密码。",
       "password-label": "实例密码",
     },
   },

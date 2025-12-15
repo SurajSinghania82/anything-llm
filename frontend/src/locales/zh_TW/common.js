@@ -586,22 +586,22 @@ const TRANSLATIONS = {
       fetching: "正在擷取...",
       "fetch-website": "擷取網站",
       "privacy-notice":
-        "這些檔案將上傳到此 AnythingLLM 實例中的文件處理器。這些檔案不會發送或共享給第三方。",
+        "這些檔案將上傳到此 AthenaLLM 實例中的文件處理器。這些檔案不會發送或共享給第三方。",
     },
     pinning: {
       what_pinning: "什麼是文件固定？",
       pin_explained_block1:
-        "當您在 AnythingLLM 中<b>固定</b>一個文件時，我們會將該文件的所有內容注入到您的提示窗口中，讓您的 LLM 完全理解。",
+        "當您在 AthenaLLM 中<b>固定</b>一個文件時，我們會將該文件的所有內容注入到您的提示窗口中，讓您的 LLM 完全理解。",
       pin_explained_block2:
         "這對於<b>大範圍模型</b>或對知識庫至關重要的小型文件效果最佳。",
       pin_explained_block3:
-        "如果您沒有從 AnythingLLM 預設獲得理想的答案，那麼固定是一個輕鬆獲得更高質量答案的方法。",
+        "如果您沒有從 AthenaLLM 預設獲得理想的答案，那麼固定是一個輕鬆獲得更高質量答案的方法。",
       accept: "好的，明白了",
     },
     watching: {
       what_watching: "觀看文件有何作用？",
       watch_explained_block1:
-        "當您在 AnythingLLM 中<b>觀看</b>一個文件時，我們會<i>自動</i>定期同步該文件的內容，並在每個管理該文件的工作區中自動更新內容。",
+        "當您在 AthenaLLM 中<b>觀看</b>一個文件時，我們會<i>自動</i>定期同步該文件的內容，並在每個管理該文件的工作區中自動更新內容。",
       watch_explained_block2:
         "此功能目前僅支持基於線上內容，無法用於手動上傳的文件。",
       watch_explained_block3_start: "您可以從 ",
@@ -703,15 +703,15 @@ const TRANSLATIONS = {
   customization: {
     interface: {
       title: "介面偏好設定",
-      description: "設定你在 AnythingLLM 的使用介面偏好。",
+      description: "設定你在 AthenaLLM 的使用介面偏好。",
     },
     branding: {
       title: "品牌與白標設定",
-      description: "使用自訂品牌設計將 AnythingLLM 白標化。",
+      description: "使用自訂品牌設計將 AthenaLLM 白標化。",
     },
     chat: {
       title: "聊天",
-      description: "設定你在 AnythingLLM 的聊天偏好。",
+      description: "設定你在 AthenaLLM 的聊天偏好。",
       auto_submit: {
         title: "語音輸入自動送出",
         description: "在靜音一段時間後自動送出語音輸入內容",
@@ -748,7 +748,7 @@ const TRANSLATIONS = {
       },
       "display-language": {
         title: "顯示語言",
-        description: "選擇 AnythingLLM 使用者介面的顯示語言（如有提供翻譯）。",
+        description: "選擇 AthenaLLM 使用者介面的顯示語言（如有提供翻譯）。",
       },
       logo: {
         title: "品牌標誌",
@@ -765,7 +765,7 @@ const TRANSLATIONS = {
         system: "系統",
         user: "使用者",
         message: "訊息",
-        assistant: "AnythingLLM 聊天助理",
+        assistant: "AthenaLLM 聊天助理",
         "double-click": "雙擊進行編輯...",
         save: "儲存訊息",
       },
@@ -945,7 +945,7 @@ const TRANSLATIONS = {
         unauthenticated: {
           title: "需要驗證",
           description:
-            "在發布項目之前，您需要通過 AnythingLLM 社群中心進行驗證。",
+            "在發布項目之前，您需要通過 AthenaLLM 社群中心進行驗證。",
           button: "連接到社群中心",
         },
       },
@@ -996,7 +996,7 @@ const TRANSLATIONS = {
     password: {
       title: "密碼保護",
       description:
-        "使用密碼保護您的 AnythingLLM 系統。如果您忘記這個密碼，將沒有復原方法，因此請務必儲存此密碼。",
+        "使用密碼保護您的 AthenaLLM 系統。如果您忘記這個密碼，將沒有復原方法，因此請務必儲存此密碼。",
       "password-label": "實例密碼",
     },
   },

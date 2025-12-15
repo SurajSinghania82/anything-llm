@@ -2,9 +2,9 @@
 
 ![Version: 1.0.0](https://img.shields.io/badge/Version-1.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.85.0](https://img.shields.io/badge/AppVersion-1.85.0-informational?style=flat-square)
 
-![AnythingLLM](https://raw.githubusercontent.com/Mintplex-Labs/anything-llm/master/images/wordmark.png)
+![AthenaLLM](https://raw.githubusercontent.com/Mintplex-Labs/anything-llm/master/images/wordmark.png)
 
-[AnythingLLM](https://github.com/Mintplex-Labs/anything-llm)
+[AthenaLLM](https://github.com/Mintplex-Labs/anything-llm)
 
 The all-in-one Desktop & Docker AI application with built-in RAG, AI agents, No-code agent builder, MCP compatibility, and more.
 

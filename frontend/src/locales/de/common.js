@@ -8,7 +8,7 @@ const TRANSLATIONS = {
     llm: {
       title: "LLM-Einstellung",
       description:
-        "AnythingLLM ist mit vielen LLM-Anbietern kompatibel. Der ausgewählte Dienst wird für die Chats verwendet.",
+        "AthenaLLM ist mit vielen LLM-Anbietern kompatibel. Der ausgewählte Dienst wird für die Chats verwendet.",
     },
     userSetup: {
       title: "Benutzer Setup",
@@ -37,15 +37,15 @@ const TRANSLATIONS = {
         "Diese Einstellungen können jederzeit in den Einstellungen angepasst werden.",
     },
     survey: {
-      title: "Willkommen bei AnythingLLM",
+      title: "Willkommen bei AthenaLLM",
       description:
-        "Helfen Sie uns, AnythingLLM an Ihre Bedürfnisse anzupassen. (Optional)",
+        "Helfen Sie uns, AthenaLLM an Ihre Bedürfnisse anzupassen. (Optional)",
       email: "Wie lautet Ihre E-Mail-Adresse?",
-      useCase: "Wofür möchten Sie AnythingLLM verwenden?",
+      useCase: "Wofür möchten Sie AthenaLLM verwenden?",
       useCaseWork: "Beruflich",
       useCasePersonal: "Privat",
       useCaseOther: "Sonstiges",
-      comment: "Wie haben Sie von AnythingLLM erfahren?",
+      comment: "Wie haben Sie von AthenaLLM erfahren?",
       commentPlaceholder:
         "Reddit, Twitter, GitHub, YouTube, etc. – Teilen Sie uns mit, wie Sie uns entdeckt haben!",
       skip: "Umfrage überspringen",
@@ -54,7 +54,7 @@ const TRANSLATIONS = {
     workspace: {
       title: "Ersten Workspace erstellen",
       description:
-        "Erstellen Sie Ihren ersten Workspace und starten Sie AnythingLLM.",
+        "Erstellen Sie Ihren ersten Workspace und starten Sie AthenaLLM.",
     },
   },
   common: {
@@ -133,7 +133,7 @@ const TRANSLATIONS = {
     checklist: {
       title: "Erste Schritte",
       tasksLeft: "Aufgaben übrig",
-      completed: "Sie sind auf dem Weg, ein AnythingLLM-Experte zu werden!",
+      completed: "Sie sind auf dem Weg, ein AthenaLLM-Experte zu werden!",
       dismiss: "schließen",
       tasks: {
         create_workspace: {
@@ -429,16 +429,16 @@ const TRANSLATIONS = {
   customization: {
     interface: {
       title: "UI Einstellungen",
-      description: "Passen Sie die Benutzeroberfläche von AnythingLLM an.",
+      description: "Passen Sie die Benutzeroberfläche von AthenaLLM an.",
     },
     branding: {
       title: "Branding & Whitelabeling",
       description:
-        "Individualisieren Sie Ihre AnythingLLM-Instanz durch eigenes Branding.",
+        "Individualisieren Sie Ihre AthenaLLM-Instanz durch eigenes Branding.",
     },
     chat: {
       title: "Chat",
-      description: "Passen Sie Ihre Chat-Einstellungen für AnythingLLM an.",
+      description: "Passen Sie Ihre Chat-Einstellungen für AthenaLLM an.",
       auto_submit: {
         title: "Spracheingaben automatisch senden",
         description:
@@ -500,7 +500,7 @@ const TRANSLATIONS = {
         system: "System",
         user: "Benutzer",
         message: "Nachricht",
-        assistant: "AnythingLLM Chat-Assistent",
+        assistant: "AthenaLLM Chat-Assistent",
         "double-click": "Zum Bearbeiten doppelklicken",
         save: "Nachrichten speichern",
       },
@@ -1191,7 +1191,7 @@ const TRANSLATIONS = {
     password: {
       title: "Passwortschutz",
       description:
-        "Schützen Sie Ihre AnythingLLM-Instanz mit einem Passwort. Wenn Sie dieses vergessen, gibt es keine Wiederherstellungsmethode, also stellen Sie sicher, dass Sie dieses Passwort speichern.",
+        "Schützen Sie Ihre AthenaLLM-Instanz mit einem Passwort. Wenn Sie dieses vergessen, gibt es keine Wiederherstellungsmethode, also stellen Sie sicher, dass Sie dieses Passwort speichern.",
       "password-label": "Instanzpasswort",
     },
   },

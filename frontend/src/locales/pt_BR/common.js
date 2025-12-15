@@ -51,14 +51,14 @@ const TRANSLATIONS = {
         "Estas configurações podem ser alteradas a qualquer momento.",
     },
     survey: {
-      title: "Bem-vindo ao AnythingLLM",
-      description: "Ajude-nos a melhorar o AnythingLLM. Opcional.",
+      title: "Bem-vindo ao AthenaLLM",
+      description: "Ajude-nos a melhorar o AthenaLLM. Opcional.",
       email: "Qual seu email?",
-      useCase: "Como você usará o AnythingLLM?",
+      useCase: "Como você usará o AthenaLLM?",
       useCaseWork: "Para trabalho",
       useCasePersonal: "Uso pessoal",
       useCaseOther: "Outro",
-      comment: "Como você conheceu o AnythingLLM?",
+      comment: "Como você conheceu o AthenaLLM?",
       commentPlaceholder:
         "Reddit, Twitter, GitHub, YouTube, etc. - Conte como nos encontrou!",
       skip: "Pular Pesquisa",
@@ -145,7 +145,7 @@ const TRANSLATIONS = {
       title: "Primeiros Passos",
       tasksLeft: "tarefas restantes",
       completed:
-        "Você está no caminho para se tornar um expert em AnythingLLM!",
+        "Você está no caminho para se tornar um expert em AthenaLLM!",
       dismiss: "fechar",
       tasks: {
         create_workspace: {
@@ -441,7 +441,7 @@ const TRANSLATIONS = {
     },
     branding: {
       title: "Marca & Etiqueta Branca",
-      description: "Personalize sua instância do AnythingLLM com sua marca.",
+      description: "Personalize sua instância do AthenaLLM com sua marca.",
     },
     chat: {
       title: "Chat",
@@ -821,7 +821,7 @@ const TRANSLATIONS = {
       fetching: "Buscando...",
       "fetch-website": "Buscar site",
       "privacy-notice":
-        "Esses arquivos são enviados ao processador local do AnythingLLM. Não são compartilhados com terceiros.",
+        "Esses arquivos são enviados ao processador local do AthenaLLM. Não são compartilhados com terceiros.",
     },
     pinning: {
       what_pinning: "O que é fixar documento?",

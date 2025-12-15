@@ -8,7 +8,7 @@ const TRANSLATIONS = {
     llm: {
       title: "LLM 기본 설정",
       description:
-        "AnythingLLM은 다양한 LLM 제공자와 연동할 수 있습니다. 여기서 선택한 서비스가 채팅을 담당하게 됩니다.",
+        "AthenaLLM은 다양한 LLM 제공자와 연동할 수 있습니다. 여기서 선택한 서비스가 채팅을 담당하게 됩니다.",
     },
     userSetup: {
       title: "사용자 설정",
@@ -31,19 +31,19 @@ const TRANSLATIONS = {
     data: {
       title: "데이터 처리 및 개인정보 보호",
       description:
-        "AnythingLLM은 여러분의 개인정보에 대한 투명성과 제어권을 최우선으로 생각합니다.",
+        "AthenaLLM은 여러분의 개인정보에 대한 투명성과 제어권을 최우선으로 생각합니다.",
       settingsHint: "이 설정은 언제든지 설정 메뉴에서 다시 변경할 수 있습니다.",
     },
     survey: {
-      title: "AnythingLLM에 오신 것을 환영합니다",
+      title: "AthenaLLM에 오신 것을 환영합니다",
       description:
-        "여러분의 필요에 맞는 AnythingLLM을 만들 수 있도록 도와주세요. (선택 사항)",
+        "여러분의 필요에 맞는 AthenaLLM을 만들 수 있도록 도와주세요. (선택 사항)",
       email: "이메일을 입력해 주세요",
-      useCase: "AnythingLLM을 어떤 용도로 사용하실 예정인가요?",
+      useCase: "AthenaLLM을 어떤 용도로 사용하실 예정인가요?",
       useCaseWork: "업무용",
       useCasePersonal: "개인용",
       useCaseOther: "기타",
-      comment: "AnythingLLM을 어떻게 알게 되셨나요?",
+      comment: "AthenaLLM을 어떻게 알게 되셨나요?",
       commentPlaceholder:
         "Reddit, Twitter, GitHub, YouTube 등 - 어떻게 알게 되셨는지 알려주세요!",
       skip: "설문 건너뛰기",
@@ -52,7 +52,7 @@ const TRANSLATIONS = {
     workspace: {
       title: "첫 번째 워크스페이스 만들기",
       description:
-        "첫 번째 워크스페이스를 생성하고 AnythingLLM을 시작해보세요.",
+        "첫 번째 워크스페이스를 생성하고 AthenaLLM을 시작해보세요.",
     },
   },
   common: {
@@ -129,7 +129,7 @@ const TRANSLATIONS = {
     checklist: {
       title: "시작하기",
       tasksLeft: "남은 작업",
-      completed: "이제 곧 AnythingLLM 전문가가 되실 거예요!",
+      completed: "이제 곧 AthenaLLM 전문가가 되실 거예요!",
       dismiss: "닫기",
       tasks: {
         create_workspace: {
@@ -420,16 +420,16 @@ const TRANSLATIONS = {
   customization: {
     interface: {
       title: "UI 환경 설정",
-      description: "AnythingLLM의 UI 환경을 원하는 대로 설정하세요.",
+      description: "AthenaLLM의 UI 환경을 원하는 대로 설정하세요.",
     },
     branding: {
       title: "브랜딩 및 화이트라벨링",
       description:
-        "AnythingLLM 인스턴스에 맞춤 브랜딩을 적용해 화이트라벨링할 수 있습니다.",
+        "AthenaLLM 인스턴스에 맞춤 브랜딩을 적용해 화이트라벨링할 수 있습니다.",
     },
     chat: {
       title: "채팅",
-      description: "AnythingLLM의 채팅 환경을 원하는 대로 설정하세요.",
+      description: "AthenaLLM의 채팅 환경을 원하는 대로 설정하세요.",
       auto_submit: {
         title: "음성 입력 자동 전송",
         description:
@@ -470,7 +470,7 @@ const TRANSLATIONS = {
       "display-language": {
         title: "표시 언어",
         description:
-          "AnythingLLM의 UI에 사용할 언어를 선택하세요. 번역이 제공되는 경우에만 적용됩니다.",
+          "AthenaLLM의 UI에 사용할 언어를 선택하세요. 번역이 제공되는 경우에만 적용됩니다.",
       },
       logo: {
         title: "브랜드 로고",
@@ -488,7 +488,7 @@ const TRANSLATIONS = {
         system: "시스템",
         user: "사용자",
         message: "메시지",
-        assistant: "AnythingLLM 채팅 어시스턴트",
+        assistant: "AthenaLLM 채팅 어시스턴트",
         "double-click": "더블 클릭하여 편집...",
         save: "메시지 저장",
       },
@@ -810,12 +810,12 @@ const TRANSLATIONS = {
       fetching: "가져오는 중...",
       "fetch-website": "웹사이트 가져오기",
       "privacy-notice":
-        "이 파일들은 이 AnythingLLM 인스턴스에서 실행 중인 문서 처리기로 업로드됩니다. 파일은 제3자에게 전송되거나 공유되지 않습니다.",
+        "이 파일들은 이 AthenaLLM 인스턴스에서 실행 중인 문서 처리기로 업로드됩니다. 파일은 제3자에게 전송되거나 공유되지 않습니다.",
     },
     pinning: {
       what_pinning: "문서 고정이란 무엇인가요?",
       pin_explained_block1:
-        "AnythingLLM에서 문서를 <b>고정</b>하면 해당 문서의 전체 내용을 프롬프트 창에 삽입하여 LLM이 완전히 이해할 수 있도록 합니다.",
+        "AthenaLLM에서 문서를 <b>고정</b>하면 해당 문서의 전체 내용을 프롬프트 창에 삽입하여 LLM이 완전히 이해할 수 있도록 합니다.",
       pin_explained_block2:
         "이 기능은 <b>대용량 컨텍스트 모델</b>이나 지식 기반에 중요한 소형 파일에 가장 적합합니다.",
       pin_explained_block3:
@@ -825,7 +825,7 @@ const TRANSLATIONS = {
     watching: {
       what_watching: "문서 감시는 무엇을 하나요?",
       watch_explained_block1:
-        "AnythingLLM에서 문서를 <b>감시</b>하면 원본 소스에서 정기적으로 문서 내용을 <i>자동으로</i> 동기화합니다. 이 파일이 관리되는 모든 워크스페이스의 내용이 자동으로 업데이트됩니다.",
+        "AthenaLLM에서 문서를 <b>감시</b>하면 원본 소스에서 정기적으로 문서 내용을 <i>자동으로</i> 동기화합니다. 이 파일이 관리되는 모든 워크스페이스의 내용이 자동으로 업데이트됩니다.",
       watch_explained_block2:
         "이 기능은 현재 온라인 기반 콘텐츠만 지원하며, 수동으로 업로드한 문서에는 사용할 수 없습니다.",
       watch_explained_block3_start: "감시 중인 문서는 ",
@@ -1019,7 +1019,7 @@ const TRANSLATIONS = {
         unauthenticated: {
           title: "인증 필요",
           description:
-            "항목을 게시하려면 AnythingLLM 커뮤니티 허브에 인증해야 합니다.",
+            "항목을 게시하려면 AthenaLLM 커뮤니티 허브에 인증해야 합니다.",
           button: "커뮤니티 허브에 연결",
         },
       },
@@ -1043,7 +1043,7 @@ const TRANSLATIONS = {
     password: {
       title: "비밀번호 보호",
       description:
-        "AnythingLLM 인스턴스를 비밀번호로 보호하십시오. 이 비밀번호를 잊어버리면 복구 방법이 없으므로 반드시 저장하세요.",
+        "AthenaLLM 인스턴스를 비밀번호로 보호하십시오. 이 비밀번호를 잊어버리면 복구 방법이 없으므로 반드시 저장하세요.",
       "password-label": "인스턴스 비밀번호",
     },
   },

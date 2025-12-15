@@ -981,7 +981,7 @@ const TRANSLATIONS = {
     password: {
       title: "Mật khẩu Protection",
       description:
-        "Protect your AnythingLLM instance with a password. If you forget this there is no recovery method so ensure you save this password.",
+        "Protect your AthenaLLM instance with a password. If you forget this there is no recovery method so ensure you save this password.",
       "password-label": "Mật khẩu của instance",
     },
   },

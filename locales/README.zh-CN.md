@@ -179,11 +179,11 @@ Mintplex Labs和社区维护了许多部署方法、脚本和模板，您可以�
 
 ## 外部应用与集成
 
-_以下是一些与 AnythingLLM 兼容的应用程序，但并非由 Mintplex Labs 维护。列在此处并不代表官方背书。_
+_以下是一些与 AthenaLLM 兼容的应用程序，但并非由 Mintplex Labs 维护。列在此处并不代表官方背书。_
 
 - [Midori AI 子系统管理器 - 使用 Docker 容器技术高效部署 AI 系统的简化方式](https://io.midori-ai.xyz/subsystem/anythingllm/) - 使用 Docker 容器技术高效部署 AI 系统的简化方式。
-- [Coolify](https://coolify.io/docs/services/anythingllm/) - 一键部署 AnythingLLM。
-- [适用于 Microsoft Word 的 GPTLocalhost](https://gptlocalhost.com/demo/) - 一个本地 Word 插件，让你可以在 Microsoft Word 中使用 AnythingLLM。
+- [Coolify](https://coolify.io/docs/services/anythingllm/) - 一键部署 AthenaLLM。
+- [适用于 Microsoft Word 的 GPTLocalhost](https://gptlocalhost.com/demo/) - 一个本地 Word 插件，让你可以在 Microsoft Word 中使用 AthenaLLM。
 
 ## 远程信息收集与隐私保护
 

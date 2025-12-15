@@ -1026,7 +1026,7 @@ const TRANSLATIONS = {
     password: {
       title: "Adgangskodebeskyttelse",
       description:
-        "Beskyt din AnythingLLM-instans med en adgangskode. Hvis du glemmer den, findes der ingen genoprettelsesmetode, så sørg for at gemme denne adgangskode.",
+        "Beskyt din AthenaLLM-instans med en adgangskode. Hvis du glemmer den, findes der ingen genoprettelsesmetode, så sørg for at gemme denne adgangskode.",
       "password-label": "Instansadgangskode",
     },
   },

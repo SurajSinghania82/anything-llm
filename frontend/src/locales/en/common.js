@@ -692,7 +692,7 @@ const TRANSLATIONS = {
     password: {
       title: "Password Protection",
       description:
-        "Protect your AnythingLLM instance with a password. If you forget this there is no recovery method so ensure you save this password.",
+        "Protect your AthenaLLM instance with a password. If you forget this there is no recovery method so ensure you save this password.",
       "password-label": "Instance Password",
     },
   },
@@ -1108,7 +1108,7 @@ const TRANSLATIONS = {
         unauthenticated: {
           title: "Authentication Required",
           description:
-            "You need to authenticate with the AnythingLLM Community Hub before publishing items.",
+            "You need to authenticate with the AthenaLLM Community Hub before publishing items.",
           button: "Connect to Community Hub",
         },
       },

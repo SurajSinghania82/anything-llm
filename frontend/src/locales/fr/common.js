@@ -987,7 +987,7 @@ const TRANSLATIONS = {
     password: {
       title: "Protection par mot de passe",
       description:
-        "Protégez votre instance AnythingLLM avec un mot de passe. Si vous oubliez ce mot de passe, il n'y a pas de méthode de récupération, donc assurez-vous de le sauvegarder.",
+        "Protégez votre instance AthenaLLM avec un mot de passe. Si vous oubliez ce mot de passe, il n'y a pas de méthode de récupération, donc assurez-vous de le sauvegarder.",
       "password-label": "Mot de passe de l'instance",
     },
   },

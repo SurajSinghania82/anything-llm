@@ -982,7 +982,7 @@ const TRANSLATIONS = {
     password: {
       title: "Wachtwoordbeveiliging",
       description:
-        "Bescherm je AnythingLLM-instantie met een wachtwoord. Als je dit vergeet, is er geen herstelmethode, dus zorg ervoor dat je dit wachtwoord opslaat.",
+        "Bescherm je AthenaLLM-instantie met een wachtwoord. Als je dit vergeet, is er geen herstelmethode, dus zorg ervoor dat je dit wachtwoord opslaat.",
       "password-label": "Instances wachtwoord",
     },
   },

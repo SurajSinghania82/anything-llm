@@ -167,17 +167,17 @@ function getDeploymentVersion() {
 }
 
 /**
- * Returns the user agent for the AnythingLLM deployment.
+ * Returns the user agent for the AthenaLLM deployment.
  * @returns {string} The user agent.
  */
-function getAnythingLLMUserAgent() {
+function getAthenaLLMUserAgent() {
   const version = getDeploymentVersion() || "unknown";
-  return `AnythingLLM/${version}`;
+  return `AthenaLLM/${version}`;
 }
 
 module.exports = {
   utilEndpoints,
   getGitVersion,
   getModelTag,
-  getAnythingLLMUserAgent,
+  getAthenaLLMUserAgent,
 };

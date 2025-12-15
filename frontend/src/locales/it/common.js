@@ -985,7 +985,7 @@ const TRANSLATIONS = {
     password: {
       title: "Protezione password",
       description:
-        "Proteggi la tua istanza AnythingLLM con una password. Se la dimentichi, non esiste un metodo di recupero, quindi assicurati di salvare questa password.",
+        "Proteggi la tua istanza AthenaLLM con una password. Se la dimentichi, non esiste un metodo di recupero, quindi assicurati di salvare questa password.",
       "password-label": "Password istanza",
     },
   },

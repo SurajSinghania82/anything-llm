@@ -227,7 +227,7 @@ We take privacy very seriously, and we hope you understand that we want to learn
 
 ## 👋 Contributing
 
-- [Contributing to AnythingLLM](./CONTRIBUTING.md) - How to contribute to AnythingLLM.
+- [Contributing to AthenaLLM](./CONTRIBUTING.md) - How to contribute to AthenaLLM.
 
 ## 💖 Sponsors
 
